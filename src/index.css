@@ -1,0 +1,555 @@
+
+
+@import "tailwindcss";
+
+.template-index {
+            
+         background-color: #ffffff;
+            
+            
+        }
+        :root,
+        .color-background-1 {
+            
+                --color-background: #ffffff;
+                --color-background-rgb:255,255,255;
+            
+
+            --color-title: #181818;
+            --color-title-rgb: 24,24,24;
+            --color-sub-title: #666666;
+            --color-text: #535353;
+            --color-text-rgb: 83,83,83;
+
+            --color-button: #fdc402;
+            --color-button-text: #000000;
+            --color-button-text-rgb: 0,0,0;
+            --color-button-border: #fdc402;
+
+            --color-button-hover: #000000;
+            --color-button-text-hover: #ffffff;
+            --color-button-text-hover-rgb: 255,255,255;
+            --color-button-border-hover: #000000;
+            --color-button-border-hover-rgb: 0,0,0;
+
+            --color-secondary-button: #f3f3f3;
+            --color-secondary-button-text: #181818;
+            --color-secondary-button-border: #f3f3f3;
+
+            --color-secondary-button-hover: #fdc402;
+            --color-secondary-button-text-hover: #000000;
+            --color-secondary-button-border-hover: #fdc402;
+
+            --color-link: #181818;
+            --color-link-rgb: 24,24,24;
+            --color-hover: #fdc402;
+            --color-hover-rgb: 253,196,2;
+
+            --color-icons: #000000;
+            --color-icons-rgb: 0,0,0;
+
+            --color-border: #eaeaea;
+            --color-border-rgb: 234,234,234;
+
+            --color-shadow: #000000;
+            --color-shadow-rgb: 0,0,0;
+            --payment-terms-background-color: rgb(255 255 255);
+        }
+           
+        
+        .color-background-2 {
+            
+                --color-background: #000000;
+                --color-background-rgb:0,0,0;
+            
+
+            --color-title: #ffffff;
+            --color-title-rgb: 255,255,255;
+            --color-sub-title: #8c8c8c;
+            --color-text: #ffffff;
+            --color-text-rgb: 255,255,255;
+
+            --color-button: #ffffff;
+            --color-button-text: #181818;
+            --color-button-text-rgb: 24,24,24;
+            --color-button-border: #ffffff;
+
+            --color-button-hover: #fdc402;
+            --color-button-text-hover: #000000;
+            --color-button-text-hover-rgb: 0,0,0;
+            --color-button-border-hover: #fdc402;
+            --color-button-border-hover-rgb: 253,196,2;
+
+            --color-secondary-button: #ffffff54;
+            --color-secondary-button-text: #ffffff;
+            --color-secondary-button-border: #ffffff;
+
+            --color-secondary-button-hover: #fdc402;
+            --color-secondary-button-text-hover: #181818;
+            --color-secondary-button-border-hover: #fdc402;
+
+            --color-link: #ffffff;
+            --color-link-rgb: 255,255,255;
+            --color-hover: #fdc402;
+            --color-hover-rgb: 253,196,2;
+
+            --color-icons: #ffffff;
+            --color-icons-rgb: 255,255,255;
+
+            --color-border: #cfcfcf;
+            --color-border-rgb: 207,207,207;
+
+            --color-shadow: #ffffff;
+            --color-shadow-rgb: 255,255,255;
+            --payment-terms-background-color: rgb(0 0 0);
+        }
+    
+        
+        .color-scheme-3bb2b504-02ba-4038-b960-5337dd5b2586 {
+            
+                --color-background: #f5f5f5;
+                --color-background-rgb:245,245,245;
+            
+
+            --color-title: #181818;
+            --color-title-rgb: 24,24,24;
+            --color-sub-title: #d4d4d4;
+            --color-text: #535353;
+            --color-text-rgb: 83,83,83;
+
+            --color-button: #000000;
+            --color-button-text: #ffffff;
+            --color-button-text-rgb: 255,255,255;
+            --color-button-border: #000000;
+
+            --color-button-hover: #fdc402;
+            --color-button-text-hover: #181818;
+            --color-button-text-hover-rgb: 24,24,24;
+            --color-button-border-hover: #fdc402;
+            --color-button-border-hover-rgb: 253,196,2;
+
+            --color-secondary-button: rgba(0,0,0,0);
+            --color-secondary-button-text: #ffffff;
+            --color-secondary-button-border: #ffffff;
+
+            --color-secondary-button-hover: #fdc402;
+            --color-secondary-button-text-hover: #000000;
+            --color-secondary-button-border-hover: #fdc402;
+
+            --color-link: #ffffff;
+            --color-link-rgb: 255,255,255;
+            --color-hover: #fdc402;
+            --color-hover-rgb: 253,196,2;
+
+            --color-icons: #ffffff;
+            --color-icons-rgb: 255,255,255;
+
+            --color-border: #eaeaea;
+            --color-border-rgb: 234,234,234;
+
+            --color-shadow: #000000;
+            --color-shadow-rgb: 0,0,0;
+            --payment-terms-background-color: rgb(245 245 245);
+        }
+    
+        
+        .color-scheme-5217cfe9-b911-4d97-acc3-eb38506ad6e7 {
+            
+            --color-background: rgba(0,0,0,0);
+            --color-background-rgb:0,0,0;
+            
+
+            --color-title: #ffffff;
+            --color-title-rgb: 255,255,255;
+            --color-sub-title: #ffffff;
+            --color-text: #ffffff;
+            --color-text-rgb: 255,255,255;
+
+            --color-button: #fdc402;
+            --color-button-text: #000000;
+            --color-button-text-rgb: 0,0,0;
+            --color-button-border: #fdc402;
+
+            --color-button-hover: #000000;
+            --color-button-text-hover: #ffffff;
+            --color-button-text-hover-rgb: 255,255,255;
+            --color-button-border-hover: #000000;
+            --color-button-border-hover-rgb: 0,0,0;
+
+            --color-secondary-button: rgba(0,0,0,0);
+            --color-secondary-button-text: #ffffff;
+            --color-secondary-button-border: #ffffff8c;
+
+            --color-secondary-button-hover: #fdc402;
+            --color-secondary-button-text-hover: #000000;
+            --color-secondary-button-border-hover: #fdc402;
+
+            --color-link: #ffffff;
+            --color-link-rgb: 255,255,255;
+            --color-hover: #fdc402;
+            --color-hover-rgb: 253,196,2;
+
+            --color-icons: #ffffff;
+            --color-icons-rgb: 255,255,255;
+
+            --color-border: #eaeaea;
+            --color-border-rgb: 234,234,234;
+
+            --color-shadow: #000000;
+            --color-shadow-rgb: 0,0,0;
+            --payment-terms-background-color: rgb(0 0 0);
+        }
+    
+        
+        .color-scheme-b426a0cd-4d31-4f8a-bd3e-dcd15f34bfd2 {
+            
+                --color-background: #f5f5f5;
+                --color-background-rgb:245,245,245;
+            
+
+            --color-title: #181818;
+            --color-title-rgb: 24,24,24;
+            --color-sub-title: #b5b5b5;
+            --color-text: #535353;
+            --color-text-rgb: 83,83,83;
+
+            --color-button: #d9d9d9;
+            --color-button-text: #ffffff;
+            --color-button-text-rgb: 255,255,255;
+            --color-button-border: #d9d9d9;
+
+            --color-button-hover: #fdc402;
+            --color-button-text-hover: #181818;
+            --color-button-text-hover-rgb: 24,24,24;
+            --color-button-border-hover: #fdc402;
+            --color-button-border-hover-rgb: 253,196,2;
+
+            --color-secondary-button: #f3f3f3;
+            --color-secondary-button-text: #181818;
+            --color-secondary-button-border: #f3f3f3;
+
+            --color-secondary-button-hover: #fdc402;
+            --color-secondary-button-text-hover: #000000;
+            --color-secondary-button-border-hover: #fdc402;
+
+            --color-link: #181818;
+            --color-link-rgb: 24,24,24;
+            --color-hover: #fdc402;
+            --color-hover-rgb: 253,196,2;
+
+            --color-icons: #000000;
+            --color-icons-rgb: 0,0,0;
+
+            --color-border: #eaeaea;
+            --color-border-rgb: 234,234,234;
+
+            --color-shadow: #000000;
+            --color-shadow-rgb: 0,0,0;
+            --payment-terms-background-color: rgb(245 245 245);
+        }
+    
+        
+        .color-scheme-e54818dd-38c9-48ad-b37b-bdaa8a69bd2f {
+            
+                --color-background: #0f2e26;
+                --color-background-rgb:15,46,38;
+            
+
+            --color-title: #ffffff;
+            --color-title-rgb: 255,255,255;
+            --color-sub-title: #ffffff;
+            --color-text: #ffffff;
+            --color-text-rgb: 255,255,255;
+
+            --color-button: #fdc402;
+            --color-button-text: #000000;
+            --color-button-text-rgb: 0,0,0;
+            --color-button-border: #fdc402;
+
+            --color-button-hover: #000000;
+            --color-button-text-hover: #ffffff;
+            --color-button-text-hover-rgb: 255,255,255;
+            --color-button-border-hover: #000000;
+            --color-button-border-hover-rgb: 0,0,0;
+
+            --color-secondary-button: rgba(0,0,0,0);
+            --color-secondary-button-text: #ffffff;
+            --color-secondary-button-border: #ffffff;
+
+            --color-secondary-button-hover: #fdc402;
+            --color-secondary-button-text-hover: #000000;
+            --color-secondary-button-border-hover: #fdc402;
+
+            --color-link: #ffffff;
+            --color-link-rgb: 255,255,255;
+            --color-hover: #fdc402;
+            --color-hover-rgb: 253,196,2;
+
+            --color-icons: #ffffff;
+            --color-icons-rgb: 255,255,255;
+
+            --color-border: #eaeaea;
+            --color-border-rgb: 234,234,234;
+
+            --color-shadow: #000000;
+            --color-shadow-rgb: 0,0,0;
+            --payment-terms-background-color: rgb(15 46 38);
+        }
+    
+    
+    :root {--font-family-primary: "DM Sans", sans-serif;
+            --font-family-default: "DM Sans", sans-serif;--container: 1500px;
+        --container-fluid: 30px;
+
+        --heading-font-size-h1: 3.0rem;
+        --heading-font-size-h2: 2.4rem;
+        --heading-font-size-h3: 1.8rem;
+        --heading-font-size-h4: 1.6rem;
+        --heading-font-size-h5: 1.2rem;
+        --heading-font-size-h6: 1.0rem;
+        --heading-font-weight: 700;
+        --heading-font-style: normal;
+        --heading-line-height: 1.5;
+
+        --body-font-size: 1.4rem;
+        --body-font-weight: 400;
+        --body-font-style: normal;
+        --body-font-line-height: 1.7;
+
+
+        --section-heading-font-size: 24px;
+        --section-heading-font-size-lg: 22px;
+        --section-heading-font-size-sm: 20px;
+        --section-heading-font-weight: 700;
+        --section-subheading-font-size: 10px;
+        --section-subheading-font-weight: 500;
+        --section-subheading-letter-spacing: 1px;
+        --section-subheading-spacing: 15px;
+        --section-descheading-font-size: 14px;
+        --section-descheading-font-weight: 400;
+        --section-descheading-spacing: 15px;
+        --section-heading-spacing: 55px;
+        
+        --section-heading-font-family: var(--font-family-primary);
+        
+        
+       --section-subheading-font-family: var(--font-family-default);
+        
+
+        --button-thickness: 0px;
+        --button-corner: 3px;
+        --button-normal-width: 130px;
+        --button-normal-height: 52px;
+        --button-medium-width: 180px;
+        --button-medium-height: 52px;
+        --button-large-width: 200px;
+        --button-large-height: 52px;
+        --button-font-size:  1.0rem;
+        --button-font-weight: 700;
+        --button-text-transform: uppercase;
+        
+        --button-font-family: var(--font-family-primary);
+        
+
+        --font-icon: "Material-Design-Iconic-Font";
+        --font-icons: "rbb-font";
+       
+        --product-corner-radius: 0px;
+        --product-corner-radius-image: 3px;
+        --product-color-border: #eaeaea;
+        --product-color-background: #ffffff;
+        --product-color-type: #b5b5b5;
+        --product-color-title: #181818;
+        --product-color-title-hover: #fdc402;
+        --product-color-price: #181818;
+        --product-color-reduced-price: #b5b5b5;
+        --product-color-button: #ffffff;
+        --product-color-button-text: #181818;
+        --product-color-button-border: #ffffff;
+        --product-color-button-hover: #fdc402;
+        --product-color-button-text-hover: #181818;
+        --product-color-button-border-hover: #fdc402;
+        --product-color-badge-new: #56cb82;
+        --product-color-badge-new-text: #fff;
+        --product-color-badge-sale: #e85b40;
+        --product-color-badge-sale-text: #ffffff;
+        --product-color-addtocart-pattern: #ffffff;
+
+        --product-countdown-color: #32355d;
+        --product-countdown-bg: #ffffff;
+        --product-countdown-border: #ffffff;
+        --product-countdown-corner: 5px;
+        
+        --breadcrumb-product-bg: #ffffff;
+        --breadcrumb-product-text-color: #181818;
+        --breadcrumb-product-top: 23px;
+        --breadcrumb-product-bottom: 23px;
+        --breadcrumb-product-margin-bottom: 0px;
+        --breadcrumb-product-border-color: #e7e8eb;
+
+        --breadcrumb-collection-bg: #eeeeee;
+        --breadcrumb-collection-heading-color: #181818;
+        --breadcrumb-collection-text-color: #181818;
+        --breadcrumb-collection-top: 160px;
+        --breadcrumb-collection-bottom: 160px;
+        --breadcrumb-collection-bottom-lg: 140px;
+        --breadcrumb-collection-bottom-md: 140px;
+        --breadcrumb-collection-bottom-sm: 140px;
+        --breadcrumb-collection-bottom-xs: 140px;
+        --breadcrumb-collection-margin-bottom: -110px;
+        --breadcrumb-collection-margin-bottom-lg: -110px;
+        --breadcrumb-collection-margin-bottom-md: -110px;
+        --breadcrumb-collection-margin-bottom-sm: -110px;
+        --breadcrumb-collection-margin-bottom-xs: -110px;
+        --breadcrumb-collection-border-color: #eaeaea;
+
+        --breadcrumb-inner-bg: #ffffff;
+        --breadcrumb-inner-heading-color: #181818;
+        --breadcrumb-inner-text-color: #181818;
+        --breadcrumb-inner-top: 160px;
+        --breadcrumb-inner-bottom: 160px;
+        --breadcrumb-inner-margin-bottom: 80px;
+        --breadcrumb-inner-border-color: #ffffff;
+
+        --bg-overlay: 0,0,0;
+        --bg-overlay-opacity: 30%;
+        --bg-overlay-blur: 0px;
+        --bg-loadpage: #ffffff;
+
+        --transition-drawer: all 0.45s cubic-bezier(0.29, 0.63, 0.44, 1);
+
+        --slider-dot-size: 10px;
+        --slider-dot-width-act: 10px;
+        --slider-dot-corner: 50px;
+        --slider-dot-color: #ffffff;
+        --slider-dot-color-act: #181818;
+        --slider-dot-border-size: 2px;
+        --slider-dot-border-color: #e7e7e7;
+
+        --slider-arrow-size: 50px;
+        --slider-arrow-corner: 100px;
+        --slider-arrow-color: #000000;
+        --slider-arrow-bg: #ffffff;
+        --slider-arrow-border: #ffffff;
+        --slider-arrow-color-act: #181818;
+        --slider-arrow-bg-act: #fdc402;
+        --slider-arrow-border-act: #fdc402;
+
+        
+    }
+    .btn-secondary {
+        --color-button: var(--color-secondary-button);
+        --color-button-text: var(--color-secondary-button-text);
+        --color-button-border: var(--color-secondary-button-border);
+        --color-button-hover: var(--color-secondary-button-hover);
+        --color-button-text-hover: var(--color-secondary-button-text-hover);
+        --color-button-border-hover: var(--color-secondary-button-border-hover);
+    }
+    
+    .dots_on_dark {
+        --slider-dot-color: #fff;
+        --slider-dot-color-act: #fdc402;
+        --slider-dot-border-color: #e85b40;
+    }
+    .arrow_on_dark {
+        --slider-arrow-color: #ffffff;
+        --slider-arrow-bg: #ffffff;
+        --slider-arrow-border: #ffffff;
+        --slider-arrow-color-act: #181818;
+        --slider-arrow-bg-act: #fdc402;
+        --slider-arrow-border-act: #fdc402;
+    }
+
+    
+        .btn,
+        .search-header__submit,
+        .social-block a {
+            overflow: hidden;
+            position: relative;
+        }
+        .btn span,
+        .btn i {
+            position: relative;
+        }
+        .btn:before,
+        .search-header__submit:before,
+        .social-block a:before {
+            content: '';
+            position: absolute;
+            display: block;
+            border-radius: 50%;
+            width: 150%;
+            height: 200%;
+            background-color: var(--color-button-hover);
+            inset-block-start: -50%;
+            inset-inline-start: -25%;
+            transform: translateY(-80%);
+            animation: hoverButton .5s forwards;
+            opacity: 0;
+            transition: opacity 0s 0.3s;
+        }
+        .btn:hover,
+        .search-header__submit:hover,
+        .social-block a:hover {
+            transition: background 0.2s 0.3s !important;
+        }
+        .btn:hover:before,
+        .search-header__submit:hover:before,
+        .social-block a:hover:before {
+            animation: hoverButton2 .5s forwards;
+            opacity: 1;
+            transition: opacity 0s;
+        }
+
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-ticker {
+  animation: ticker 30s linear infinite;
+}
+.animate-ticker:hover {
+  animation-play-state: paused;
+}    
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+}
+
+
+
+          @keyframes slideUp {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-50%); }
+          }
+          @keyframes slideDown {
+            0% { transform: translateY(-50%); }
+            100% { transform: translateY(0); }
+          }
+          .animate-slide-up {
+            animation: slideUp 20s linear infinite;
+          }
+          .animate-slide-down {
+            animation: slideDown 20s linear infinite;
+          }
+          .animate-slide-up:hover, .animate-slide-down:hover {
+            animation-play-state: paused;
+          }
+          .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+          }
+        
+
+
+          .background-img{
+            background-image: url("https://nov-minicom.myshopify.com/cdn/shop/files/home1-bg-faqs.jpg?v=1750667412&width=2560");
+            background-size: cover;
+            background-position:center;
+            background-repeat: no-repeat;
+          }
