@@ -553,3 +553,18 @@
             background-position:center;
             background-repeat: no-repeat;
           }
+
+          .background-img2{
+            background-image: url("https://nov-minicom.myshopify.com/cdn/shop/files/breadcrumb-collection.jpg?v=1749027938&width=2560");
+            background-size: contain;
+            background-position:center;
+            background-repeat: no-repeat;
+          }
+
+          .background-img3{
+            background-image: url("https://nov-minicom.myshopify.com/cdn/shop/files/404.png?v=1753761952&width=768");
+              background-size: contain;
+            background-position:center;
+            background-repeat: no-repeat;
+          }
+         

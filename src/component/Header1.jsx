@@ -1,7 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
 import { MainContent } from "../constant/MainContent";
 import { Button1 } from "./Btn/Button1";
 import { Input1 } from "./inputs/input1";
+import { MegaMenu } from "./MegaMenu";
+
+const CloseIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="20"
+    height="20"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <line x1="18" y1="6" x2="6" y2="18" />
+    <line x1="6" y1="6" x2="18" y2="18" />
+  </svg>
+);
 
 const MenuIcon = () => (
   <svg
@@ -90,8 +109,14 @@ const BagIcon = () => (
 );
 
 const Header1 = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+
+  const isHome = location.pathname === '/';
+
   return (
-    <div className="w-full py-3 px-8 flex items-center justify-between text-white font-[var(--font-family-primary)] gap-6 ">
+    <div className={`${isHome ? 'absolute top-0 left-0 bg-transparent' : 'relative bg-black'} w-full z-50`}>
+      <div className="w-full py-3 px-8 flex items-center justify-between text-white font-[var(--font-family-primary)] gap-6 z-50 relative">
       {/* Logo Section */}
       <div className="cursor-pointer">
         <img src={MainContent.appLogo} alt="Logo" className="w-50" />
@@ -101,7 +126,13 @@ const Header1 = () => {
 
       {/* Search Bar */}
       <div className="flex gap-2 w-full ml-6">
-        <Button1 variant="outline" text="Menu" icon={<MenuIcon />} />
+        <Button1 
+          variant="outline" 
+          text="Menu" 
+          icon={isMenuOpen ? <CloseIcon /> : <MenuIcon />} 
+          onClick={() => setIsMenuOpen(!isMenuOpen)} 
+          isActive={isMenuOpen}
+        />
         <div className="flex items-center flex-1 h-13 bg-white rounded">
           <Input1 />
         </div>
@@ -126,9 +157,12 @@ const Header1 = () => {
           badge="1"
         />
 
-        {/* Cart */}
         <Button1 variant="cart" icon={<BagIcon />} badge="0" price="$0.00" />
       </div>
+      </div>
+
+      {/* Mega Menu Overlay */}
+      <MegaMenu isOpen={isMenuOpen} isHome={isHome} />
     </div>
   );
 };

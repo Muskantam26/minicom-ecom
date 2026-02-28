@@ -1,11 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { Star, Eye, ShoppingBag, ArrowLeft, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 
 
-const HandpickedElegance = ({ data = [] }) => {
+const HandpickedElegance = ({ 
+  data = [], 
+  itemsPerRow = 5, 
+  isSlider = true,
+  title = "HANDPICKED ELEGANCE",
+  subtitle = "TIMELESS ELEGANCE FOR YOUR HOME"
+}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [visibleItems, setVisibleItems] = useState(5);
+  const [visibleItems, setVisibleItems] = useState(itemsPerRow);
 
   // Handle responsive visible items count
   useEffect(() => {
@@ -13,13 +20,13 @@ const HandpickedElegance = ({ data = [] }) => {
       if (window.innerWidth < 640) setVisibleItems(1);
       else if (window.innerWidth < 768) setVisibleItems(2);
       else if (window.innerWidth < 1024) setVisibleItems(3);
-      else setVisibleItems(5);
+      else setVisibleItems(itemsPerRow);
     };
 
     handleResize(); // Initial setup
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, [itemsPerRow]);
 
   const totalPages = Math.ceil(data.length / visibleItems);
   const maxIndex = data.length - visibleItems;
@@ -42,18 +49,25 @@ const HandpickedElegance = ({ data = [] }) => {
   return (
     <div className="w-full max-w-screen-2xl mx-auto px-4 sm:px-8 py-10">
       {/* Header */}
-      <div className="flex flex-wrap md:flex-nowrap items-center justify-between mb-8 pb-4">
+      <div className={`flex flex-wrap md:flex-nowrap items-center ${title || subtitle ? 'justify-between' : 'justify-end'} mb-8 pb-4`}>
+        {(title || subtitle) && (
         <div className="flex items-center gap-4 flex-grow w-full md:w-auto">
+          {title && (
           <h2 className="text-xl md:text-2xl font-bold uppercase text-gray-900 whitespace-nowrap">
-            HANDPICKED ELEGANCE
+            {title}
           </h2>
-          <div className="h-px bg-black w-12 md:w-32"></div>
+          )}
+          {title && subtitle && <div className="h-px bg-black w-12 md:w-32"></div>}
+          {subtitle && (
           <span className="text-xs md:text-xs text-gray-400 font-medium uppercase tracking-wider truncate">
-            TIMELESS ELEGANCE FOR YOUR HOME
+            {subtitle}
           </span>
+          )}
         </div>
+        )}
 
         {/* Navigation */}
+        {isSlider && (
         <div className="flex items-center gap-4 mt-4 md:mt-0 justify-end w-full md:w-auto">
           <button
             onClick={prevSlide}
@@ -81,22 +95,23 @@ const HandpickedElegance = ({ data = [] }) => {
             <ArrowRight className="w-5 h-5" />
           </button>
         </div>
+        )}
       </div>
 
-      {/* Product Slider Container */}
-      <div className="overflow-hidden">
+      {/* Product Slider/Grid Container */}
+      <div className={isSlider ? "overflow-hidden" : ""}>
         <div
-          className="flex transition-transform duration-500 ease-in-out -mx-3"
-          style={{
+          className={`flex ${isSlider ? "transition-transform duration-500 ease-in-out" : "flex-wrap"} -mx-3`}
+          style={isSlider ? {
             transform: `translateX(-${currentIndex * (100 / visibleItems)}%)`,
-          }}
+          } : {}}
         >
           {data.map((product) => (
             <div
               key={product.id}
-              className="w-full sm:w-1/2 md:w-1/3 lg:w-1/5 flex-shrink-0 px-3"
+              className={`w-full sm:w-1/2 md:w-1/3 ${itemsPerRow === 3 ? 'lg:w-1/3' : itemsPerRow === 4 ? 'lg:w-1/4' : 'lg:w-1/5'} flex-shrink-0 px-3 ${!isSlider ? 'mb-8' : ''}`}
             >
-              <div className="group flex flex-col cursor-pointer h-full">
+              <Link to={`/product/${product.id}`} className="group flex flex-col cursor-pointer h-full">
                 {/* Image Container */}
                 <div className="relative aspect-[4/5] bg-[#f8f8f8] mb-4 overflow-hidden flex items-center justify-center p-6">
                   <img
@@ -148,7 +163,7 @@ const HandpickedElegance = ({ data = [] }) => {
                     {product.price}
                   </p>
                 </div>
-              </div>
+              </Link>
             </div>
           ))}
         </div>

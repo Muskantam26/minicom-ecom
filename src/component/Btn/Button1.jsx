@@ -9,6 +9,7 @@ export const Button1 = ({
   className = "",
   variant = "transparent", // 'primary', 'outline', 'transparent', 'cart'
   iconPosition = "left", // 'left', 'right'
+  isActive = false,
   ...props
 }) => {
   let baseClass = "transition-colors shrink-0 outline-none ";
@@ -18,7 +19,7 @@ export const Button1 = ({
       "flex items-center rounded py-4 gap-2 bg-[var(--color-button)] text-[var(--color-button-text)] hover:bg-[var(--color-button-hover)] hover:text-[var(--color-button-text-hover)] h-full px-6 text-xs uppercase";
   } else if (variant === "outline") {
     baseClass +=
-      "flex items-center gap-2 border text-white px-6 h-13 rounded hover:bg-[var(--color-hover)] hover:border-none hover:text-[var(--color-button-text)]";
+      `flex items-center gap-2 border px-6 h-13 rounded hover:bg-[var(--color-hover)] hover:border-none hover:text-[var(--color-button-text)] ${isActive ? 'bg-[var(--color-hover)] border-transparent text-[var(--color-button-text)]' : 'text-white'}`;
   } else if (variant === "transparent") {
     baseClass +=
       "flex items-center gap-1 text-white hover:text-[var(--color-button)] relative group";

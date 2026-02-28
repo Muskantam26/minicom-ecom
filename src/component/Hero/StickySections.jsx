@@ -3,14 +3,15 @@ import { ArrowUpRight } from "lucide-react";
 
 const StickySections = ({ data }) => {
   return (
-    <div className="relative w-full rounded-2xl ">
+    <div className="relative w-full pb-[10vh]">
       {data.map((item, index) => (
         <div
           key={index}
-          className="sticky top-0 w-full h-[80vh] flex flex-col md:flex-row overflow-hidden shadow-sm"
+          className="sticky top-[10vh] w-full h-[80vh] flex flex-col md:flex-row overflow-hidden shadow-2xl shadow-black/5 rounded-3xl border border-gray-100 bg-white"
           style={{
-            // We can use z-index to ensure proper stacking, though DOM order handles it usually.
+           
             zIndex: index + 10,
+            marginTop: index === 0 ? "0" : "10vh", 
           }}
         >
           {/* Left Side: Content */}

@@ -1,8 +1,9 @@
 import React from 'react';
 import { ArrowUp } from 'lucide-react';
 import { MainContent } from '../constant/MainContent';
+import { footerData } from '../constant/footerData';
 
-const Footer = ({ data }) => {
+const Footer = ({ data = footerData }) => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -111,27 +112,7 @@ const Footer = ({ data }) => {
           
         </div>
 
-        {/* Bottom Bar */}
-        {/* <div className="mt-20 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-6 relative">
-          <div className="flex flex-col gap-1 text-xs text-gray-400 uppercase tracking-widest text-center md:text-left">
-            <span>{data.copyright}</span>
-            <span>{data.allRightsReserved}</span>
-          </div>
-
-          <div className="flex items-center gap-3">
-            {data.paymentMethods.map((method, index) => (
-              <img 
-                key={index}
-                src={method.image} 
-                alt={method.name} 
-                className="h-8 object-contain rounded bg-white p-1" 
-              />
-            ))}
-          </div>
-
        
-          */}
-        {/* </div> */}
       </div>
     </footer>
   );

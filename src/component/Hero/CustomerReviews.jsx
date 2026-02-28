@@ -144,12 +144,12 @@ const CustomerReviews = ({ data = [] }) => {
         </button>
 
         {/* Scroll up button similar to image */}
-        <button
+        {/* <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className="absolute right-0 w-10 h-10 border border-yellow-400 rounded-full flex items-center justify-center text-yellow-500 hover:bg-yellow-50 transition-colors"
         >
           <ArrowUp className="w-5 h-5" />
-        </button>
+        </button> */}
       </div>
     </div>
   );
