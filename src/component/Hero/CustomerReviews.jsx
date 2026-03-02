@@ -127,7 +127,7 @@ const CustomerReviews = ({ data = [] }) => {
               onClick={() => goToDot(index)}
               className={`w-2.5 h-2.5 rounded-full transition-all ${
                 currentIndex === index
-                  ? "bg-black"
+                  ? "bg-brand-hover"
                   : "bg-transparent border border-gray-300"
               }`}
               aria-label={`Go to slide ${index + 1}`}

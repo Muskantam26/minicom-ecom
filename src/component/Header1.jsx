@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { MainContent } from "../constant/MainContent";
 import { Button1 } from "./Btn/Button1";
 import { Input1 } from "./inputs/input1";
 import { MegaMenu } from "./MegaMenu";
+import { AccountSidebar } from "./AccountSidebar";
+import { CartSidebar } from "./CartSidebar";
 
 const CloseIcon = () => (
   <svg
@@ -109,14 +111,17 @@ const BagIcon = () => (
 );
 
 const Header1 = () => {
+  const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isAccountOpen, setIsAccountOpen] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useState(false);
   const location = useLocation();
 
   const isHome = location.pathname === '/';
 
   return (
-    <div className={`${isHome ? 'absolute top-0 left-0 bg-transparent' : 'relative bg-black'} w-full z-50`}>
-      <div className="w-full py-3 px-8 flex items-center justify-between text-white font-[var(--font-family-primary)] gap-6 z-50 relative">
+    <div className={`${isHome ? 'absolute top-0 left-0 bg-transparent' : 'relative bg-[#0f2e26] '} w-full z-50`}>
+      <div className="w-full py-3 px-8 flex items-center justify-between text-white font-primary gap-6 z-50 relative">
       {/* Logo Section */}
       <div className="cursor-pointer">
         <img src={MainContent.appLogo} alt="Logo" className="w-50" />
@@ -147,22 +152,31 @@ const Header1 = () => {
       {/* Right Actions */}
       <div className="flex items-center gap-8 shrink-0">
         {/* Account */}
-        <Button1 variant="transparent" text="Account" icon={<UserIcon />} />
+        <Button1 variant="transparent" text="Account" icon={<UserIcon />} onClick={() => setIsAccountOpen(true)} />
 
         {/* Wishlist */}
+        <span onClick={() => navigate("/wishlist")} className="cursor-pointer inline-flex">
         <Button1
           variant="transparent"
           text="Wishlist"
           icon={<StarIcon />}
           badge="1"
-        />
+      
+         />
+        </span>
 
-        <Button1 variant="cart" icon={<BagIcon />} badge="0" price="$0.00" />
+        <Button1 variant="cart" icon={<BagIcon />} badge="0" price="$0.00" onClick={() => setIsCartOpen(true)} />
       </div>
       </div>
 
       {/* Mega Menu Overlay */}
       <MegaMenu isOpen={isMenuOpen} isHome={isHome} />
+
+      {/* Account Sidebar */}
+      <AccountSidebar isOpen={isAccountOpen} onClose={() => setIsAccountOpen(false)} />
+
+      {/* Cart Sidebar */}
+      <CartSidebar isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
     </div>
   );
 };

@@ -540,7 +540,7 @@ const faqData = {
 const Hero = () => {
   return (
     <>
-      <div className="relative w-full h-[90vh] bg-black overflow-hidden group">
+      <div className="relative w-full h-[90vh] bg-brand-hover overflow-hidden group">
         {/* Background Slider */}
         <Slider slides={slides} slideDuration={3000} />
       </div>

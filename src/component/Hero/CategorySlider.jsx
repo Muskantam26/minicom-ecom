@@ -27,9 +27,9 @@ export const CategorySlider = ({ data = [] }) => {
                 </div>
 
                 {/* Content Section with Hover Effect */}
-                <div className="relative w-full p-4 flex justify-between items-center overflow-hidden rounded-[16px] mt-2 group-hover:text-white transition-colors duration-300">
+                <div className="relative w-full p-4 flex justify-between items-center overflow-hidden rounded-[16px] mt-2 group-hover:text-brand-text-hover transition-colors duration-300">
                   {/* Left-to-right black background slide */}
-                  <div className="absolute inset-0 bg-black -translate-x-[101%] group-hover:translate-x-0 transition-transform duration-500 ease-in-out z-[0]"></div>
+                  <div className="absolute inset-0 bg-brand-hover -translate-x-[101%] group-hover:translate-x-0 transition-transform duration-500 ease-in-out z-[0]"></div>
 
                   {/* Text Container */}
                   <span className="font-semibold text-xs  whitespace-normal leading-tight w-[70%] z-10 transition-colors duration-300">

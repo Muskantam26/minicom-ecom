@@ -23,7 +23,7 @@ const StickySections = ({ data }) => {
               {item.description}
             </p>
             {item.buttonText && (
-              <button className="bg-black text-white px-8 py-4 text-sm md:text-base font-bold uppercase tracking-widest flex items-center gap-3 hover:bg-gray-800 transition-colors duration-300">
+              <button className="bg-brand-hover text-white px-8 py-4 text-sm md:text-base font-bold uppercase tracking-widest flex items-center gap-3 hover:bg-gray-800 transition-colors duration-300">
                 {item.buttonText}
                 <ArrowUpRight size={20} />
               </button>

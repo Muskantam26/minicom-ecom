@@ -123,7 +123,7 @@ const coreFeaturesData = {
          <div className='flex-1 overflow-hidden'>
         <HandpickedElegance data={handpickedEleganceData} itemsPerRow={3} isSlider={false} />
 
-        <button className='bg-yellow-400 p-5 px-15 ml-80 rounded text-xs  font-medium flex justify-center items-center hover:bg-black hover:text-white'>Load More Items</button>
+        <button className='bg-yellow-400 p-5 px-15 ml-80 rounded text-xs  font-medium flex justify-center items-center hover:bg-brand-hover hover:text-brand-text-hover'>Load More Items</button>
         </div>
        </div>
 

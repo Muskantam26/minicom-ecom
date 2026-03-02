@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Star, Eye, ShoppingBag, ArrowLeft, ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -11,6 +11,7 @@ const HandpickedElegance = ({
   title = "HANDPICKED ELEGANCE",
   subtitle = "TIMELESS ELEGANCE FOR YOUR HOME"
 }) => {
+  const navigate = useNavigate();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [visibleItems, setVisibleItems] = useState(itemsPerRow);
 
@@ -57,7 +58,7 @@ const HandpickedElegance = ({
             {title}
           </h2>
           )}
-          {title && subtitle && <div className="h-px bg-black w-12 md:w-32"></div>}
+          {title && subtitle && <div className="h-px bg-brand-hover w-12 md:w-32"></div>}
           {subtitle && (
           <span className="text-xs md:text-xs text-gray-400 font-medium uppercase tracking-wider truncate">
             {subtitle}
@@ -82,7 +83,7 @@ const HandpickedElegance = ({
                 onClick={() => goToPage(idx)}
                 className={`w-2 h-2 rounded-full transition-colors ${
                   currentPage === idx
-                    ? "bg-black"
+                    ? "bg-brand-hover"
                     : "border border-gray-300 hover:border-black"
                 }`}
               ></button>
@@ -111,7 +112,7 @@ const HandpickedElegance = ({
               key={product.id}
               className={`w-full sm:w-1/2 md:w-1/3 ${itemsPerRow === 3 ? 'lg:w-1/3' : itemsPerRow === 4 ? 'lg:w-1/4' : 'lg:w-1/5'} flex-shrink-0 px-3 ${!isSlider ? 'mb-8' : ''}`}
             >
-              <Link to={`/product/${product.id}`} className="group flex flex-col cursor-pointer h-full">
+              <div onClick={() => navigate(`/product/${product.id}`)} className="group flex flex-col cursor-pointer h-full">
                 {/* Image Container */}
                 <div className="relative aspect-[4/5] bg-[#f8f8f8] mb-4 overflow-hidden flex items-center justify-center p-6">
                   <img
@@ -132,7 +133,7 @@ const HandpickedElegance = ({
 
                   {/* Hover Icon (Bottom Right) */}
                   <div className="absolute bottom-4 right-4 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 ease-out delay-75 z-10">
-                    <button className="w-10 h-10 bg-black rounded-full flex items-center justify-center text-white hover:bg-gray-800 shadow-sm transition-colors">
+                    <button className="w-10 h-10 bg-brand-hover rounded-full flex items-center justify-center text-white hover:bg-gray-800 shadow-sm transition-colors">
                       <ShoppingBag className="w-4 h-4" />
                     </button>
                   </div>
@@ -163,7 +164,7 @@ const HandpickedElegance = ({
                     {product.price}
                   </p>
                 </div>
-              </Link>
+              </div>
             </div>
           ))}
         </div>

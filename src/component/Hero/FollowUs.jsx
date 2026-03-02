@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom';
 
 const FollowUS = ({ data }) => {
+  const navigate = useNavigate();
   // Fallback data in case props are not passed
   const content = data || {
     profileImage: "https://nov-minicom.myshopify.com/cdn/shop/files/icon-rbb.png?crop=center&height=380&v=1750222821&width=380",
@@ -62,15 +64,15 @@ const FollowUS = ({ data }) => {
           </p>
           
           <div className="mt-4">
-            <a 
-              href={content.buttonLink}
-              className="inline-flex items-center gap-2 bg-white text-black px-6 py-3 text-[11px] font-bold uppercase tracking-widest hover:bg-gray-50 transition-colors shadow-sm border border-gray-100 group"
+            <span 
+              onClick={() => navigate(content.buttonLink)}
+              className="inline-flex items-center gap-2 bg-white text-black px-6 py-3 text-[11px] font-bold uppercase tracking-widest hover:bg-gray-50 transition-colors shadow-sm border border-gray-100 group cursor-pointer"
             >
               {content.buttonText} 
               <span className="transform -rotate-45 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform text-gray-500 text-lg leading-none">
                 →
               </span>
-            </a>
+            </span>
           </div>
         </div>
 

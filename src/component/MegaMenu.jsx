@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { FaAngleDown } from "react-icons/fa6";
 
 export const MegaMenu = ({ isOpen, isHome }) => {
+  const navigate = useNavigate();
   const [hoveredMenu, setHoveredMenu] = useState(null);
 
   const menuItems = [
@@ -16,21 +17,21 @@ export const MegaMenu = ({ isOpen, isHome }) => {
       hasSubmenu: true,
       submenu: [
         { name: "404 Error", path: "/404" },
-        { name: "About Us", path: "/about" },
+        { name: "About Us", path: "/about-Us" },
         { name: "Contact Us", path: "/contact" },
-        { name: "FAQS Page", path: "/faqs" },
-        { name: "Store Direction Page", path: "/store-direction" },
-        { name: "Store Location Page", path: "/store-location" },
-        { name: "Testimonial Page", path: "/testimonial" },
+        { name: "FAQS Page", path: "/Frequently-Asked-Questions" },
+        { name: "Store Direction Page", path: "/page-store-direction" },
+        { name: "Store Location Page", path: "/page-store-location" },
+        { name: "Testimonial Page", path: "/page-testimonial" },
       ]
     },
-    { id: 5, name: "BLOG", path: "/blog" },
+    // { id: 5, name: "BLOG", path: "/blog" },
   ];
 
   return (
     <div
       className={`absolute top-full left-0 w-full flex justify-center text-white transition-all duration-300 ease-in-out z-40 overflow-visible ${
-        isHome ? 'bg-transparent' : 'bg-black'
+        isHome ? 'bg-transparent' : 'bg-[#0f2e26]'
       } ${
         isOpen ? "max-h-[800px] opacity-100 border-t border-gray-800" : "max-h-0 opacity-0 hidden"
       }`}
@@ -44,10 +45,10 @@ export const MegaMenu = ({ isOpen, isHome }) => {
               onMouseEnter={() => setHoveredMenu(menu.id)}
               onMouseLeave={() => setHoveredMenu(null)}
             >
-              <Link to={menu.path} className={`flex items-center gap-1 hover:text-[var(--color-button)] ${hoveredMenu === menu.id ? 'text-[var(--color-button)]' : ''}`}>
+              <span onClick={() => navigate(menu.path)} className={`flex items-center gap-1 hover:text-[var(--color-button)] ${hoveredMenu === menu.id ? 'text-[var(--color-button)]' : ''} cursor-pointer`}>
                 {menu.name}
                 {menu.hasSubmenu && <FaAngleDown size={10} />}
-              </Link>
+              </span>
               
               {/* Submenu Dropdown */}
               {menu.hasSubmenu && (
@@ -59,7 +60,7 @@ export const MegaMenu = ({ isOpen, isHome }) => {
                   <ul className="py-2 text-gray-800 flex flex-col">
                     {menu.submenu.map((sub, idx) => (
                       <li key={idx} className="hover:bg-gray-100 hover:text-black transition-colors px-5 py-2.5">
-                        <Link to={sub.path} className="block w-full">{sub.name}</Link>
+                        <span onClick={() => navigate(sub.path)} className="block w-full cursor-pointer">{sub.name}</span>
                       </li>
                     ))}
                   </ul>

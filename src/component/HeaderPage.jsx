@@ -1,7 +1,8 @@
 import React from 'react';
-import { useLocation, Link } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const HeaderPage = ({ title }) => {
+  const navigate = useNavigate();
   const location = useLocation();
   
   // Determine title from URL if not passed as prop
@@ -27,13 +28,13 @@ const HeaderPage = ({ title }) => {
       <div className='absolute inset-0 bg-white/10'></div>
       
       <div className='relative z-10 flex flex-col items-center justify-center text-center px-4 mt-8'>
-        <h1 className='text-2xl font-bold text-[#181818] uppercase tracking-wide mb-4'>
+        <h1 className='text-2xl font-bold text-title uppercase tracking-wide mb-4'>
           {displayTitle}
         </h1>
-        <div className='flex items-center space-x-3 text-xs font-medium text-[#181818]'>
-          <Link to="/" className='hover:text-[#fdc402] transition-colors duration-300'>Home</Link>
-          <span className='text-[#666666] text-xs'>•</span>
-          <span className='capitalize text-[#535353]'>{formattedTitle}</span>
+        <div className='flex items-center space-x-3 text-xs font-medium text-title'>
+          <span onClick={() => navigate("/")} className='hover:text-brand transition-colors duration-300 cursor-pointer'>Home</span>
+          <span className='text-subtitle text-xs'>•</span>
+          <span className='capitalize text-body'>{formattedTitle}</span>
         </div>
       </div>
     </div>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { ChevronLeft, ChevronRight, Star, Heart, Share2, HelpCircle, MessageCircle, Leaf, PencilRuler, Recycle, Lightbulb, Package, Truck, Check } from 'lucide-react';
 import CoreFeatures from '../component/Hero/CoreFeatures';
 import ProductReviews from '../component/ProductReviews';
@@ -110,6 +110,7 @@ const handpickedEleganceData = [
 
 
 const Products = () => {
+  const navigate = useNavigate();
   const { id } = useParams();
   
   // In a real app, we would fetch the product using the ID. 
@@ -142,7 +143,7 @@ const Products = () => {
     <div className="max-w-[1400px] mx-auto">
       {/* Breadcrumb */}
       <div className="text-sm text-gray-900 mb-8 font-medium mt-5">
-        <Link to="/" className="hover:underline">Home</Link>
+        <span onClick={() => navigate("/")} className="hover:underline cursor-pointer">Home</span>
         <span className="mx-2">•</span>
         <span className="text-gray-600">{product.name}</span>
       </div>
@@ -249,7 +250,7 @@ const Products = () => {
                 <button
                   key={size}
                   onClick={() => setSelectedSize(size)}
-                  className={`px-6 py-2 border text-[11px] font-bold tracking-wider rounded-sm ${selectedSize === size ? 'bg-black text-white border-black' : 'bg-white text-gray-900 border-gray-200 hover:border-gray-400'} transition-all`}
+                  className={`px-6 py-2 border text-[11px] font-bold tracking-wider rounded-sm ${selectedSize === size ? 'bg-brand-hover text-white border-black' : 'bg-white text-gray-900 border-gray-200 hover:border-gray-400'} transition-all`}
                 >
                   {size}
                 </button>

@@ -139,7 +139,7 @@ const FeaturedProduct = ({
           {/* Buy it Now */}
           <Button1
             text="Buy It Now →"
-            className="w-full h-12 bg-black text-white hover:bg-gray-800 rounded-none !text-sm flex justify-center items-center mt-2 mb-8 uppercase font-bold transition-colors"
+            className="w-full h-12 bg-brand-hover text-white hover:bg-gray-800 rounded-none !text-sm flex justify-center items-center mt-2 mb-8 uppercase font-bold transition-colors"
             variant="custom"
           />
 

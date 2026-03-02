@@ -30,7 +30,7 @@ export const Button1 = ({
 
   const badgeClass =
     variant === "cart"
-      ? "absolute -top-4 -right-1 bg-black text-white text-[10px] w-[14px] h-[14px] flex items-center justify-center rounded-full font-bold"
+      ? "absolute -top-4 -right-1 bg-brand-hover text-white text-[10px] w-[14px] h-[14px] flex items-center justify-center rounded-full font-bold"
       : "absolute -top-3 -right-2 bg-white/30 text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full font-bold group-hover:bg-[var(--color-button)] group-hover:text-black transition-colors";
 
   const iconElement =

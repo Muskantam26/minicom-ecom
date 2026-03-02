@@ -291,7 +291,7 @@ const SidebarFilter = () => {
          <h1 className='flex items-center text-gray-900 text-sm font-bold gap-2 uppercase'><FaAngleUp/>SIZE</h1>
          <div className='grid grid-cols-2 gap-3 mt-4 text-[10px] uppercase font-bold tracking-wider'>
           {['Small', 'Medium', 'Large'].map((s) => (
-            <button key={s} className='border border-gray-300 py-2.5 rounded hover:bg-black hover:text-white transition-colors cursor-pointer'>{s}</button>
+            <button key={s} className='border border-gray-300 py-2.5 rounded hover:bg-brand-hover hover:text-brand-text-hover transition-colors cursor-pointer'>{s}</button>
           ))}
          </div>
       </div>

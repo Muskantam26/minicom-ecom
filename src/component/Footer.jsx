@@ -2,8 +2,10 @@ import React from 'react';
 import { ArrowUp } from 'lucide-react';
 import { MainContent } from '../constant/MainContent';
 import { footerData } from '../constant/footerData';
+import { useNavigate } from 'react-router-dom';
 
 const Footer = ({ data = footerData }) => {
+  const navigate = useNavigate();
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -12,12 +14,12 @@ const Footer = ({ data = footerData }) => {
   };
 
   return (
-    <footer className="bg-black text-white py-16 px-4 md:px-8 font-sans">
+    <footer className="bg-brand-hover text-white py-16 px-4 md:px-8 font-sans">
       <div className="max-w-[1400px] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10">
           
           {/* Logo and Intro Section */}
-          <div className="lg:col-span-4 flex flex-col gap-6">
+          <div className="lg:col-span-4 flex flex-col gap-6 footer-img ">
             <div className="flex items-center gap-3">
              <img src={MainContent.appLogo} alt="Logo here" className="w-40" />
             </div>
@@ -26,14 +28,14 @@ const Footer = ({ data = footerData }) => {
             </p>
             <div className="flex gap-4 mt-2">
               {data.socialLinks.map((social, index) => (
-                <a 
+                <span 
                   key={index} 
-                  href={social.url} 
-                  className="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center hover:bg-gray-200 transition-colors"
+                  onClick={() => navigate(social.url)} 
+                  className="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center hover:bg-gray-200 transition-colors cursor-pointer"
                   aria-label={social.label}
                 >
                   <span dangerouslySetInnerHTML={{ __html: social.iconSvg }} className="w-4 h-4" />
-                </a>
+                </span>
               ))}
             </div>
           </div>
@@ -72,9 +74,9 @@ const Footer = ({ data = footerData }) => {
                 <ul className="flex flex-col gap-4">
                   {data.links.customerCare.items.map((link, index) => (
                     <li key={index}>
-                      <a href={link.url} className="text-gray-400 hover:text-white text-xs uppercase tracking-wide transition-colors">
+                      <span onClick={() => navigate(link.url)} className="text-gray-400 hover:text-brand-text-hover text-xs uppercase tracking-wide transition-colors cursor-pointer">
                         {link.label}
-                      </a>
+                      </span>
                     </li>
                   ))}
                 </ul>
@@ -86,9 +88,9 @@ const Footer = ({ data = footerData }) => {
                 <ul className="flex flex-col gap-4">
                   {data.links.helpSupport.items.map((link, index) => (
                     <li key={index}>
-                      <a href={link.url} className="text-gray-400 hover:text-white text-xs uppercase tracking-wide transition-colors">
+                      <span onClick={() => navigate(link.url)} className="text-gray-400 hover:text-brand-text-hover text-xs uppercase tracking-wide transition-colors cursor-pointer">
                         {link.label}
-                      </a>
+                      </span>
                     </li>
                   ))}
                 </ul>
@@ -100,9 +102,9 @@ const Footer = ({ data = footerData }) => {
                 <ul className="flex flex-col gap-4">
                   {data.links.companyInfo.items.map((link, index) => (
                     <li key={index}>
-                      <a href={link.url} className="text-gray-400 hover:text-white text-xs uppercase tracking-wide transition-colors">
+                      <span onClick={() => navigate(link.url)} className="text-gray-400 hover:text-brand-text-hover text-xs uppercase tracking-wide transition-colors cursor-pointer">
                         {link.label}
-                      </a>
+                      </span>
                     </li>
                   ))}
                 </ul>

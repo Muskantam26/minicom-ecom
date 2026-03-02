@@ -14,7 +14,7 @@ export const Ticker = ({ data = [] }) => {
             {data.map((item, index) => (
               <div
                 key={index}
-                className="flex items-center text-[#181818] text-[20px] tracking-wide"
+                className="flex items-center text-title text-[20px] tracking-wide"
                 style={{
                   fontFamily:
                     "var(--section-subheading-font-family, sans-serif)",

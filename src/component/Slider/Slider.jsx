@@ -27,7 +27,7 @@ export const Slider = ({ slides, slideDuration = 5000, className = "" }) => {
 
   return (
     <div
-      className={`relative w-full h-full bg-black overflow-hidden group ${className}`}
+      className={`relative w-full h-full bg-brand-hover overflow-hidden group ${className}`}
     >
       {/* Background Images with Crossfade */}
       {slides.map((slide, index) => (

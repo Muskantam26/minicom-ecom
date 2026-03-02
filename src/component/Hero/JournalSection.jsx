@@ -44,7 +44,7 @@ const JournalSection = ({ data = [] }) => {
           <h2 className="text-xl md:text-2xl font-bold uppercase text-gray-900 whitespace-nowrap">
             THE MINICOM JOURNAL
           </h2>
-          <div className="h-px bg-black w-12 md:w-24"></div>
+          <div className="h-px bg-brand-hover w-12 md:w-24"></div>
           <span className="text-xs md:text-xs text-gray-400 font-medium uppercase tracking-wider truncate">
             DESIGN & TRENDS
           </span>
@@ -65,7 +65,7 @@ const JournalSection = ({ data = [] }) => {
                 onClick={() => goToPage(idx)}
                 className={`w-2 h-2 rounded-full transition-colors ${
                   currentPage === idx
-                    ? "bg-black"
+                    ? "bg-brand-hover"
                     : "border border-gray-300 hover:border-black"
                 }`}
               ></button>
