@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Hero from "./pages/Hero";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Collection from "./pages/Collection";
@@ -17,16 +17,14 @@ import ShopingCart from "./pages/ShopingCart";
 import Login from "./component/auth/Login";
 import Register from "./component/auth/Register";
 import Checkout from "./pages/Checkout";
-
-    
+import MobileBottomNav from "./component/MobileBottomNav";
 
 const App = () => {
-  const location = useLocation();
-  const hideHeaderFooter = location.pathname === '/checkout';
+  const [isAccountOpen, setIsAccountOpen] = useState(false);
 
   return (
     <div className="flex flex-col min-h-screen overflow-x-clip">
-      {!hideHeaderFooter && <Header1 />}
+      <Header1 isAccountOpen={isAccountOpen} setIsAccountOpen={setIsAccountOpen} />
       {/* <main className="flex-grow"> */}
         <Routes>
           <Route path="/" element={<Hero />} />
@@ -50,7 +48,8 @@ const App = () => {
        
         </Routes>
       {/* </main> */}
-      {!hideHeaderFooter && <Footer />}
+      <Footer />
+      <MobileBottomNav setIsAccountOpen={setIsAccountOpen} />
     </div>
   );
 };

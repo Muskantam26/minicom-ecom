@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaAngleDown } from "react-icons/fa6";
+import { motion, AnimatePresence } from "framer-motion";
 
 export const MegaMenu = ({ isOpen, isHome }) => {
   const navigate = useNavigate();
@@ -25,18 +26,22 @@ export const MegaMenu = ({ isOpen, isHome }) => {
         { name: "Testimonial Page", path: "/page-testimonial" },
       ]
     },
-    // { id: 5, name: "BLOG", path: "/blog" },
+  
   ];
 
   return (
-    <div
-      className={`absolute top-full left-0 w-full flex justify-center text-white transition-all duration-300 ease-in-out z-40 overflow-visible ${
-        isHome ? 'bg-transparent' : 'bg-[#0f2e26]'
-      } ${
-        isOpen ? "max-h-[800px] opacity-100 border-t border-gray-800" : "max-h-0 opacity-0 hidden"
-      }`}
-    >
-      <div className="container mx-auto px-8 py-6">
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -30 }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
+          className={`absolute top-full left-0 w-full flex justify-center text-white z-40 overflow-visible border-t border-gray-800 ${
+            isHome ? 'bg-transparent' : 'bg-[#0f2e26]'
+          }`}
+        >
+          <div className="container mx-auto px-8 py-6">
         <ul className="flex flex-wrap gap-8 font-medium text-xs ml-50">
           {menuItems.map((menu) => (
             <li 
@@ -70,6 +75,8 @@ export const MegaMenu = ({ isOpen, isHome }) => {
           ))}
         </ul>
       </div>
-    </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 };

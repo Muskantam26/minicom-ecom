@@ -22,16 +22,14 @@ const productData = {
   ],
   sizes: ["SMALL", "MEDIUM", "LARGE"],
   images: [
-    "https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&fit=crop&q=80",
+    "//nov-minicom.myshopify.com/cdn/shop/files/1-min_02d0e979-f8f4-49b4-bbc3-c4852675c021.jpg?v=1749111160&width=260",
+    "//nov-minicom.myshopify.com/cdn/shop/files/1-min_0c6275f8-a24e-4702-90d0-bd01e49e1b67.jpg?v=1749111925&width=260",
+    "//nov-minicom.myshopify.com/cdn/shop/files/1-min_dfb1df34-1c68-4ee5-8bfb-ae5b3f5e430b.jpg?v=1749111367&width=260",
+    "//nov-minicom.myshopify.com/cdn/shop/files/1-min_202fa2e4-302c-481c-aab5-74b98f061838.jpg?v=1749110906&width=260",
   ]
 };
 
-
 const coreFeaturesData = {
-  
   features: [
     {
       icon: <Leaf className="w-6 h-6 text-black" strokeWidth={1.5} />,
@@ -56,65 +54,38 @@ const coreFeaturesData = {
   ],
 };
 
-
 const handpickedEleganceData = [
   {
     id: 1,
     name: "Modern Single Sofa Chair For Stylish Living Room",
     price: "$200.00",
-    image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80",
+    image: "//nov-minicom.myshopify.com/cdn/shop/files/1-min_202fa2e4-302c-481c-aab5-74b98f061838.jpg?v=1749110906&width=260",
   },
   {
     id: 2,
     name: "Decorative Cactus Plant Pot For Indoor Display",
     price: "$37.00",
-    image: "https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&fit=crop&q=80",
+    image: "//nov-minicom.myshopify.com/cdn/shop/files/1-min_2ee03dbe-b3f3-4ffe-a2f8-299ecbdfaa06.jpg?v=1749111269&width=260",
   },
   {
     id: 3,
     name: "Solid Wood TV Stand With Storage Drawers Design",
     price: "$135.00",
-    image: "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&q=80",
+    image: "//nov-minicom.myshopify.com/cdn/shop/files/1-min_44cdab73-bcb9-483d-ba6c-cbfc32321ed9.jpg?v=1749112427&width=260",
   },
   {
     id: 4,
     name: "Modern Wooden Lounge Chair With Wide Fabric Arms",
     price: "$155.00",
-    image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80",
-  },
-  {
-    id: 5,
-    name: "Modern Low Profile Swivel Sofa With Soft Seat",
-    price: "$125.00",
-    image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80",
-  },
-  {
-    id: 6,
-    name: "Minimalist White Ceramic Vases Set",
-    price: "$45.00",
-    image: "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&q=80",
-  },
-  {
-    id: 7,
-    name: "Classic Wooden Dining Chair With Curved Back",
-    price: "$89.00",
-    image: "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&q=80",
-  },
-  {
-    id: 8,
-    name: "Round Coffee Table With Golden Metal Legs",
-    price: "$210.00",
-    image: "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&q=80",
+    image: "//nov-minicom.myshopify.com/cdn/shop/files/1-min_0c6275f8-a24e-4702-90d0-bd01e49e1b67.jpg?v=1749111925&width=260",
   },
 ];
-
 
 const Products = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   
   // In a real app, we would fetch the product using the ID. 
-  // For now we just use the mocked data.
   const product = productData;
 
   const [selectedImage, setSelectedImage] = useState(0);
@@ -140,25 +111,25 @@ const Products = () => {
   };
 
   return (
-    <div className="max-w-[1400px] mx-auto">
+    <div className="w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
       {/* Breadcrumb */}
-      <div className="text-sm text-gray-900 mb-8 font-medium mt-5">
+      <div className="text-xs text-gray-900 mb-6 font-medium mt-2 md:mt-5">
         <span onClick={() => navigate("/")} className="hover:underline cursor-pointer">Home</span>
         <span className="mx-2">•</span>
         <span className="text-gray-600">{product.name}</span>
       </div>
 
-      <div className="flex flex-col lg:flex-row gap-12 text-gray-900">
+      <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 text-gray-900">
         
         {/* Left Column: Images */}
-        <div className="w-full lg:w-[55%] flex flex-col md:flex-row gap-4 h-[600px]">
+        <div className="w-full lg:w-[55%] flex flex-col-reverse md:flex-row gap-4">
           {/* Thumbnails */}
-          <div className="flex flex-row md:flex-col gap-4 overflow-x-auto md:w-20 lg:w-24 shrink-0 scrollbar-hide">
+          <div className="flex flex-row md:flex-col gap-3 md:gap-4 overflow-x-auto w-full md:w-20 lg:w-24 shrink-0 scrollbar-hide py-2 md:py-0">
             {product.images.map((img, idx) => (
               <button 
                 key={idx} 
                 onClick={() => setSelectedImage(idx)}
-                className={`w-20 md:w-full aspect-[4/5] bg-gray-50 flex items-center justify-center p-2 rounded border ${selectedImage === idx ? 'border-yellow-400' : 'border-transparent hover:border-gray-200'} transition-colors`}
+                className={`w-20 h-24 md:w-full md:h-auto md:aspect-[4/5] shrink-0 bg-gray-50 flex items-center justify-center p-2 rounded border ${selectedImage === idx ? 'border-yellow-400' : 'border-transparent hover:border-gray-200'} transition-colors`}
               >
                 <img src={img} alt={`Thumbnail ${idx}`} className="w-full h-full object-contain mix-blend-multiply" />
               </button>
@@ -166,48 +137,48 @@ const Products = () => {
           </div>
           
           {/* Main Image */}
-          <div className="flex-1 bg-gray-50 relative flex items-center justify-center p-12 rounded">
+          <div className="flex-1 bg-gray-50 relative flex items-center justify-center p-6 sm:p-12 rounded  h-100">
             <button 
               onClick={handlePrevImage}
-              className="absolute left-4 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow hover:bg-gray-100 transition disabled:opacity-50"
+              className="absolute left-2 sm:left-4 w-8 h-8 sm:w-10 sm:h-10 bg-white rounded-full flex items-center justify-center shadow hover:bg-gray-100 transition disabled:opacity-50 z-10"
             >
-              <ChevronLeft className="w-5 h-5" />
+              <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
             <img 
               src={product.images[selectedImage]} 
               alt={product.name} 
-              className="w-full h-full object-contain mix-blend-multiply transition-opacity duration-300" 
+              className="w-full  object-contain mix-blend-multiply transition-opacity duration-300" 
             />
             <button 
               onClick={handleNextImage}
-              className="absolute right-4 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow hover:bg-gray-100 transition disabled:opacity-50"
+              className="absolute right-2 sm:right-4 w-8 h-8 sm:w-10 sm:h-10 bg-white rounded-full flex items-center justify-center shadow hover:bg-gray-100 transition disabled:opacity-50 z-10"
             >
-              <ChevronRight className="w-5 h-5" />
+              <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
           </div>
         </div>
 
         {/* Right Column: Details */}
         <div className="w-full lg:w-[45%] flex flex-col">
-          <h1 className="text-xl md:text-[20px] font-bold text-gray-900 mb-3">{product.name}</h1>
+          <h1 className="text-sm md:text-[28px] font-bold text-gray-900 mb-3 leading-tight">{product.name}</h1>
           
           {/* Reviews */}
           <div className="flex items-center gap-3 mb-5">
             <div className="flex text-gray-300">
-              {[1,2,3,4,5].map(i => <Star key={i} className="w-5 h-5 fill-current" />)}
+              {[1,2,3,4,5].map(i => <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 fill-current" />)}
             </div>
             <span className="text-sm font-medium text-gray-500">(0)</span>
             <button className="text-[11px] font-bold tracking-wider hover:text-yellow-500 transition-colors">VIEW ALL REVIEWS</button>
           </div>
 
-          <div className="text-[28px] font-bold text-gray-900 mb-6">{product.price}</div>
+          <div className="text-[24px] sm:text-[28px] font-bold text-gray-900 mb-6">{product.price}</div>
 
-          <div className="text-[13px] text-gray-500 leading-[1.8] mb-8">
+          <div className="text-[14px] sm:text-[13px] text-gray-500 leading-[1.8] mb-8">
             {product.description}
           </div>
 
           <div className="flex items-center gap-4 mb-3 text-[13px]">
-            <span className="font-bold w-[90px]">AVAILABLE:</span>
+            <span className="font-bold w-[90px] shrink-0">AVAILABLE:</span>
             {product.available ? (
               <span className="text-green-500 flex items-center gap-1 font-medium">IN STOCK <Check className="w-3.5 h-3.5" /></span>
             ) : (
@@ -215,11 +186,11 @@ const Products = () => {
             )}
           </div>
           <div className="flex items-center gap-4 mb-3 text-[13px]">
-            <span className="font-bold w-[90px]">TAGS:</span>
-            <span className="text-gray-600">{product.tags.join(', ')}</span>
+            <span className="font-bold w-[90px] shrink-0">TAGS:</span>
+            <span className="text-gray-600 truncate">{product.tags.join(', ')}</span>
           </div>
           <div className="flex items-center gap-4 mb-3 text-[13px]">
-            <span className="font-bold w-[90px]">SKU:</span>
+            <span className="font-bold w-[90px] shrink-0">SKU:</span>
             <span className="text-gray-600">{product.sku}</span>
           </div>
           <div className="flex items-start gap-4 mb-8 text-[13px]">
@@ -230,7 +201,7 @@ const Products = () => {
           {/* Color Selection */}
           <div className="mb-6">
             <div className="text-[13px] font-bold mb-3 uppercase">COLOR: {selectedColor.name}</div>
-            <div className="flex gap-3">
+            <div className="flex flex-wrap gap-3">
               {product.colors.map(color => (
                 <button
                   key={color.name}
@@ -245,12 +216,12 @@ const Products = () => {
           {/* Size Selection */}
           <div className="mb-8">
             <div className="text-[13px] font-bold mb-3 uppercase">SIZE: {selectedSize}</div>
-            <div className="flex gap-3">
+            <div className="flex flex-wrap gap-3">
               {product.sizes.map(size => (
                 <button
                   key={size}
                   onClick={() => setSelectedSize(size)}
-                  className={`px-6 py-2 border text-[11px] font-bold tracking-wider rounded-sm ${selectedSize === size ? 'bg-brand-hover text-white border-black' : 'bg-white text-gray-900 border-gray-200 hover:border-gray-400'} transition-all`}
+                  className={`px-4 sm:px-6 py-2 border text-[11px] font-bold tracking-wider rounded-sm ${selectedSize === size ? 'bg-brand-hover text-white border-black bg-gray-900' : 'bg-white text-gray-900 border-gray-200 hover:border-gray-400'} transition-all`}
                 >
                   {size}
                 </button>
@@ -259,18 +230,18 @@ const Products = () => {
           </div>
 
           {/* Quantity & Actions */}
-          <div className="flex gap-4 mb-4 h-12">
-            <div className="flex border border-gray-200 items-center w-[120px] rounded-sm bg-white">
+          <div className="flex flex-wrap sm:flex-nowrap gap-3 sm:gap-4 mb-4">
+            <div className="flex border border-gray-200 items-center w-[110px] sm:w-[120px] h-12 rounded-sm bg-white shrink-0">
               <button onClick={handleDecreaseQuantity} className="w-10 h-full flex items-center justify-center text-gray-500 hover:text-black transition-colors">-</button>
               <span className="flex-1 text-center font-medium text-sm">{quantity}</span>
               <button onClick={handleIncreaseQuantity} className="w-10 h-full flex items-center justify-center text-gray-500 hover:text-black transition-colors">+</button>
             </div>
             
-            <button className="flex-1 bg-gray-100 hover:bg-yellow-400 text-black font-bold text-xs tracking-wider rounded-sm transition-colors uppercase">
+            <button className="flex-1 min-w-[150px] h-12 bg-gray-100 hover:bg-yellow-400 text-black font-bold text-xs tracking-wider rounded-sm transition-colors uppercase">
               Add To Bag
             </button>
             
-            <button className="w-12 h-full flex items-center justify-center bg-gray-100 hover:bg-gray-200 rounded-sm transition-colors text-gray-600">
+            <button className="w-12 h-12 shrink-0 flex items-center justify-center bg-gray-100 hover:bg-gray-200 rounded-sm transition-colors text-gray-600">
               <Heart className="w-5 h-5 fill-current" />
             </button>
           </div>
@@ -280,22 +251,22 @@ const Products = () => {
           </button>
 
           {/* Additional Links */}
-          <div className="flex gap-8 border-b border-gray-100 pb-8 mb-8">
-            <button className="flex items-center gap-2 text-[13px] font-bold hover:text-yellow-500 transition-colors">
+          <div className="flex flex-wrap gap-6 sm:gap-8 border-b border-gray-100 pb-8 mb-8">
+            <button className="flex items-center gap-2 text-[12px] sm:text-[13px] font-bold hover:text-yellow-500 transition-colors">
               <Share2 className="w-4 h-4" /> SHARE
             </button>
-            <button className="flex items-center gap-2 text-[13px] font-bold hover:text-yellow-500 transition-colors">
+            <button className="flex items-center gap-2 text-[12px] sm:text-[13px] font-bold hover:text-yellow-500 transition-colors">
               <HelpCircle className="w-4 h-4" /> ASK A QUESTION
             </button>
-            <button className="flex items-center gap-2 text-[13px] font-bold hover:text-yellow-500 transition-colors">
+            <button className="flex items-center gap-2 text-[12px] sm:text-[13px] font-bold hover:text-yellow-500 transition-colors">
               <MessageCircle className="w-4 h-4" /> FAQ
             </button>
           </div>
 
           {/* Benefits Box */}
-          <div className="border border-gray-200 rounded-xl p-8 mb-8 text-center">
+          <div className="border border-gray-200 rounded-xl p-6 sm:p-8 mb-8 text-center">
             <h3 className="text-[13px] font-bold mb-6">THE BENEFITS OF CHOOSING US</h3>
-            <div className="grid grid-cols-4 gap-4">
+            <div className="grid grid-cols-4 md:grid-cols-4 gap-6 sm:gap-4">
               <div className="flex flex-col items-center gap-3">
                 <Leaf className="w-7 h-7" strokeWidth={1.5} />
                 <span className="text-[10px] font-bold whitespace-nowrap">ECO-FRIENDLY<br/>MATERIALS</span>
@@ -318,12 +289,12 @@ const Products = () => {
           {/* Shipping Info */}
           <div className="flex flex-col gap-4 text-[13px] text-gray-500">
             <div className="flex items-center gap-3">
-              <Package className="w-5 h-5 text-gray-400" />
+              <Package className="w-5 h-5 text-gray-400 shrink-0" />
               <span>Orders ship within 5 to 10 business days.</span>
             </div>
             <div className="flex items-center gap-3">
-              <Truck className="w-5 h-5 text-gray-400" />
-              <span>Hoorey ! This item ships free to the US</span>
+              <Truck className="w-5 h-5 text-gray-400 shrink-0" />
+              <span>Hoorey! This item ships free to the US</span>
             </div>
           </div>
 
@@ -331,14 +302,14 @@ const Products = () => {
       </div>
 
       {/* Product Tabs Section */}
-      <div className="mt-20 w-full mb-16">
+      <div className="mt-16 md:mt-20 w-full mb-12 md:mb-16 border-t md:border-t-0 border-gray-100 pt-8 md:pt-0">
         {/* Tab Headers */}
-        <div className="flex flex-wrap gap-10 md:gap-16 mb-8">
+        <div className="flex flex-wrap gap-4 sm:gap-8 md:gap-16 mb-8 overflow-x-auto scrollbar-hide">
           {['Description', 'Delivery policy', 'Shipping & Return', 'Custom Tab'].map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`text-[19px] font-bold transition-colors ${
+              className={`text-[16px] md:text-[19px] whitespace-nowrap font-bold transition-colors ${
                 activeTab === tab ? 'text-[#FFC100]' : 'text-zinc-800 hover:text-gray-500'
               }`}
             >
@@ -348,7 +319,7 @@ const Products = () => {
         </div>
 
         {/* Tab Content */}
-        <div className="text-[14px] text-gray-500 leading-[1.8] max-w-[100%]">
+        <div className="text-[14px] text-gray-500 leading-[1.8] w-full">
           {activeTab === 'Description' && (
             <div className="space-y-5">
               <p>
@@ -388,26 +359,21 @@ const Products = () => {
         </div>
       </div>
 
-      <div className="mt-20">
+      <div className="mt-16 md:mt-20">
         <CoreFeatures data={coreFeaturesData} />
       </div>
-
       
       {/* Reviews Section */}
-      <div className="mb-20">
+      <div className="mb-16 md:mb-20 mt-16">
         <ProductReviews />
       </div>
 
-
-{/* Related Products */}
-
-<h1 className='text-2xl font-bold flex text-center items-center justify-center'>PRODUCT RELATED</h1>
-<HandpickedElegance data={handpickedEleganceData} title="" subtitle=""/>
+      {/* Related Products */}
+      <h2 className="text-xl md:text-2xl font-bold text-center mb-6 md:mb-8">PRODUCT RELATED</h2>
+      <HandpickedElegance data={handpickedEleganceData} title="" subtitle="" />
             
-
-
-<h1 className='text-2xl font-bold flex text-center items-center justify-center mt-5'>RECENTLY VIEWED PRODUCTS</h1>
-<HandpickedElegance data={handpickedEleganceData} title="" subtitle=""/>
+      <h2 className="text-xl md:text-2xl font-bold text-center mt-16 mb-6 md:mb-8">RECENTLY VIEWED PRODUCTS</h2>
+      <HandpickedElegance data={handpickedEleganceData} title="" subtitle="" />
     </div>
   );
 };

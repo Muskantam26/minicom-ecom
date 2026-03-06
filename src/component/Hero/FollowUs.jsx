@@ -35,41 +35,41 @@ const FollowUS = ({ data }) => {
   };
 
   return (
-    <section className="relative w-full bg-[#f8f8f8] overflow-hidden py-10 lg:py-0">
+    <section className="relative w-full bg-[#f8f8f8] overflow-hidden lg:py-0">
      
-      <div className="max-w-[1400px] mx-auto flex flex-col lg:flex-row items-center justify-between px-4 sm:px-10 lg:pr-0 h-auto lg:h-[700px] relative">
+      <div className=" mx-auto flex flex-col lg:flex-row items-center justify-between px-3 sm:px-6 lg:px-5 h-auto lg:h-[700px] relative">
         
         {/* Left Side Content */}
-        <div className="w-full lg:w-1/3 flex flex-col justify-center gap-6 z-20 py-10 relative">
-          <div className="flex items-center gap-4">
+        <div className="w-full lg:w-1/3 flex flex-col justify-center gap-4 md:gap-6 lg:pr-5 md:py-10 relative items-center text-center lg:items-start lg:text-left">
+          <div className="flex items-center gap-3 md:gap-4">
             <img 
               src={content.profileImage} 
               alt={content.handle} 
-              className="w-12 h-12 rounded-full object-cover" 
+              className="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover" 
             />
-            <div>
-              <h3 className="text-gray-900 font-semibold text-[15px] leading-tight">{content.handle}</h3>
-              <p className="text-[#a3a3a3] text-[10px] tracking-widest font-bold uppercase mt-1">
+            <div className="text-left">
+              <h3 className="text-gray-900 font-semibold text-[13px] md:text-[15px] leading-tight">{content.handle}</h3>
+              <p className="text-[#a3a3a3] text-[9px] md:text-[10px] tracking-widest font-bold uppercase mt-1">
                 {content.followers}
               </p>
             </div>
           </div>
           
-          <h2 className=" lg:text-2xl font-bold text-black mt-4 tracking-tight">
+          <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-black mt-2 md:mt-4 tracking-tight">
             {content.title}
           </h2>
           
-          <p className="text-gray-500 text-[13px] leading-loose max-w-sm mt-2">
+          <p className="text-gray-500 text-[11px] md:text-[13px] leading-relaxed md:leading-loose max-w-sm mt-1 md:mt-2">
             {content.description}
           </p>
           
-          <div className="mt-4">
+          <div className="mt-2 md:mt-4">
             <span 
               onClick={() => navigate(content.buttonLink)}
-              className="inline-flex items-center gap-2 bg-white text-black px-6 py-3 text-[11px] font-bold uppercase tracking-widest hover:bg-gray-50 transition-colors shadow-sm border border-gray-100 group cursor-pointer"
+              className="inline-flex items-center gap-2 bg-white text-black px-4 py-2.5 md:px-6 md:py-3 text-[10px] md:text-[11px] font-bold uppercase tracking-widest hover:bg-gray-50 transition-colors shadow-sm border border-gray-100 group cursor-pointer"
             >
               {content.buttonText} 
-              <span className="transform -rotate-45 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform text-gray-500 text-lg leading-none">
+              <span className="transform -rotate-45 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform text-gray-500 text-base md:text-lg leading-none">
                 →
               </span>
             </span>
@@ -77,11 +77,11 @@ const FollowUS = ({ data }) => {
         </div>
 
         {/* Right Side Slider */}
-        <div className="w-full lg:w-[60%] h-[500px] lg:h-full relative flex gap-4 overflow-hidden pl-0 lg:pl-10 mt-10 lg:mt-0">
+        <div className="w-full lg:w-[60%] h-[350px] sm:h-[450px] lg:h-full relative flex gap-2 sm:gap-4 overflow-hidden pl-0 lg:pl-10 mt-6 md:mt-10 lg:mt-0">
           
           {/* Blur Gradients for the slider area */}
-          <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#f8f8f8] via-[#f8f8f8]/80 to-transparent z-10 pointer-events-none"></div>
-          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#f8f8f8] via-[#f8f8f8]/80 to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute top-0 left-0 right-0 h-20 sm:h-32 bg-gradient-to-b from-[#f8f8f8] via-[#f8f8f8]/80 to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute bottom-0 left-0 right-0 h-20 sm:h-32 bg-gradient-to-t from-[#f8f8f8] via-[#f8f8f8]/80 to-transparent z-10 pointer-events-none"></div>
 
           {content.images.map((column, colIndex) => {
             const isSlideDown = colIndex === 1;
@@ -90,9 +90,9 @@ const FollowUS = ({ data }) => {
 
             return (
               <div key={colIndex} className="flex-1 relative w-full h-full overflow-hidden scrollbar-hide">
-                 <div className={`flex flex-col gap-4 w-full ${isSlideDown ? 'animate-slide-down' : 'animate-slide-up'}`}>
+                 <div className={`flex flex-col gap-2 sm:gap-4 w-full ${isSlideDown ? 'animate-slide-down' : 'animate-slide-up'}`}>
                     {items.map((img, imgIndex) => (
-                      <div key={imgIndex} className="w-full h-[220px] sm:h-[280px] lg:h-[320px] shrink-0">
+                      <div key={imgIndex} className="w-full h-[140px] sm:h-[220px] lg:h-[320px] shrink-0">
                         <img 
                           src={img} 
                           alt="" 

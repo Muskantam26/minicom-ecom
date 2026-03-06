@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 export const Button1 = ({
   text,
@@ -16,7 +17,7 @@ export const Button1 = ({
 
   if (variant === "primary") {
     baseClass +=
-      "flex items-center rounded py-4 gap-2 bg-[var(--color-button)] text-[var(--color-button-text)] hover:bg-[var(--color-button-hover)] hover:text-[var(--color-button-text-hover)] h-full px-6 text-xs uppercase";
+      "flex items-center rounded py-4 gap-2 bg-[var(--color-button)] text-[var(--color-button-text)] hover:text-[var(--color-button-text-hover)] h-full px-6 text-xs uppercase relative overflow-hidden";
   } else if (variant === "outline") {
     baseClass +=
       `flex items-center gap-2 border px-6 h-13 rounded hover:bg-[var(--color-hover)] hover:border-none hover:text-[var(--color-button-text)] ${isActive ? 'bg-[var(--color-hover)] border-transparent text-[var(--color-button-text)]' : 'text-white'}`;
@@ -35,7 +36,7 @@ export const Button1 = ({
 
   const iconElement =
     icon || badge != null ? (
-      <div className="relative">
+      <div className="relative z-10">
         {icon}
         {badge != null && <span className={badgeClass}>{badge}</span>}
       </div>
@@ -43,34 +44,46 @@ export const Button1 = ({
 
   const textElement = text ? (
     <span
-      className={
+      className={`relative z-10 ${
         variant === "outline"
           ? "font-bold text-[10px] tracking-wide uppercase"
           : variant === "primary"
-            ? "font-medium"
+            ? "font-bold"
             : "text-xs font-bold"
-      }
+      }`}
     >
       {text}
     </span>
   ) : null;
 
   return (
-    <button
+    <motion.button
+      whileHover={variant === "primary" ? "hover" : undefined}
+      initial="initial"
       className={`${baseClass} ${className}`}
       onClick={onClick}
       {...props}
     >
+      {variant === "primary" && (
+        <motion.div
+          variants={{
+            initial: { y: "100%", borderTopLeftRadius: "70%", borderTopRightRadius: "70%" },
+            hover: { y: "0%", borderTopLeftRadius: "0%", borderTopRightRadius: "0%" }
+          }}
+          transition={{ duration: 0.2, ease: "easeOut" }}
+          className="absolute top-0 left-[-10%] w-[120%] h-full bg-[var(--color-button-hover)] z-0"
+        />
+      )}
       {iconPosition === "left" && iconElement}
       {textElement}
       {iconPosition === "right" && iconElement}
 
       {price && (
-        <div className="bg-[var(--color-button)] text-black px-2 py-1 rounded text-xs font-bold relative ml-1">
+        <div className="bg-[var(--color-button)] text-black px-2 py-1 rounded text-xs font-bold relative ml-1 z-10">
           {price}
           <div className="absolute left-[-4px] top-1/2 -translate-y-1/2 w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-r-[4px] border-r-[var(--color-button)]" />
         </div>
       )}
-    </button>
+    </motion.button>
   );
 };

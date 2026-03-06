@@ -1,13 +1,18 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 
 
 const BrandMarquee = ({ data = [] }) => {
   return (
-    <div className="w-full bg-[#f8f8f8] py-12 overflow-hidden border-t border-b border-gray-100">
+    <div className="w-full  overflow-hidden">
       <div className="relative flex max-w-[100vw] overflow-hidden group">
         {/* Animated Marquee Strip */}
-        <div className="flex w-max animate-marquee whitespace-nowrap group-hover:[animation-play-state:paused]">
+        <motion.div 
+          className="flex w-max whitespace-nowrap"
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{ ease: "linear", duration: 20, repeat: Infinity }}
+        >
           {/* First set of logos */}
           <div className="flex shrink-0 items-center justify-around w-max">
             {data.map((src, index) => (
@@ -41,7 +46,7 @@ const BrandMarquee = ({ data = [] }) => {
               </div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

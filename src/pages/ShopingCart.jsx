@@ -88,7 +88,7 @@ const ShopingCart = () => {
           {/* Left Column: Cart Table */}
           <div className="w-full lg:w-[65%]">
             {/* Table Header */}
-            <div className="grid grid-cols-12 bg-[#f4f4f4] py-4 px-6 text-[11px] font-bold tracking-widest text-gray-900 uppercase">
+            <div className="hidden md:grid grid-cols-12 bg-[#f4f4f4] py-4 px-6 text-[11px] font-bold tracking-widest text-gray-900 uppercase">
               <div className="col-span-6">PRODUCT</div>
               <div className="col-span-2 text-center">PRICE</div>
               <div className="col-span-2 text-center">QTY</div>
@@ -98,24 +98,35 @@ const ShopingCart = () => {
             {/* Table Body */}
             <div className="border border-gray-100 mb-6">
               {items.length > 0 ? items.map(item => (
-                <div key={item.id} className="grid grid-cols-12 items-center py-6 px-6 border-b border-gray-100 last:border-b-0">
-                  <div className="col-span-6 flex items-center gap-6">
-                    <button onClick={() => removeItem(item.id)}>
+                <div key={item.id} className="flex flex-col md:grid md:grid-cols-12 md:items-center py-6 px-4 md:px-6 border-b border-gray-100 last:border-b-0 gap-4 md:gap-0">
+                  <div className="col-span-12 md:col-span-6 flex items-start md:items-center gap-4 md:gap-6">
+                    <button onClick={() => removeItem(item.id)} className="hidden md:block">
                       <TrashIcon />
                     </button>
                     <div className="w-[80px] h-[100px] bg-[#f8f8f8] flex items-center justify-center p-2 shrink-0">
                       <img src={item.image} alt={item.title} className="max-w-full max-h-full object-contain mix-blend-multiply" />
                     </div>
-                    <div className="text-[14px] text-gray-900 font-medium max-w-[250px] leading-relaxed">
-                      {item.title}
+                    <div className="flex-1">
+                      <div className="flex justify-between items-start">
+                        <div className="text-[14px] text-gray-900 font-medium md:max-w-[250px] leading-relaxed pr-4 md:pr-0">
+                          {item.title}
+                        </div>
+                        <button onClick={() => removeItem(item.id)} className="md:hidden mt-1 shrink-0">
+                          <TrashIcon />
+                        </button>
+                      </div>
+                      <div className="md:hidden text-[14px] font-bold text-gray-900 mt-2">
+                        ${item.price.toFixed(2)}
+                      </div>
                     </div>
                   </div>
                   
-                  <div className="col-span-2 text-center text-[14px] font-bold text-gray-900">
+                  <div className="hidden md:block col-span-2 text-center text-[14px] font-bold text-gray-900">
                     ${item.price.toFixed(2)}
                   </div>
                   
-                  <div className="col-span-2 flex justify-center">
+                  <div className="col-span-12 md:col-span-2 flex items-center justify-between md:justify-center w-full mt-2 md:mt-0">
+                    <span className="md:hidden text-[13px] font-bold text-gray-900 uppercase">Quantity</span>
                     <div className="flex border border-gray-200 items-center w-[90px] h-10 bg-white">
                       <button onClick={() => updateQuantity(item.id, -1)} className="w-8 h-full flex items-center justify-center text-gray-400 hover:text-black transition-colors">-</button>
                       <span className="flex-1 text-center font-bold text-[13px] text-gray-900">{item.quantity}</span>
@@ -123,8 +134,9 @@ const ShopingCart = () => {
                     </div>
                   </div>
 
-                  <div className="col-span-2 text-right text-[14px] font-medium text-gray-500">
-                    ${(item.price * item.quantity).toFixed(2)}
+                  <div className="col-span-12 md:col-span-2 flex justify-between md:block text-right text-[14px] font-medium text-gray-500 mt-2 md:mt-0">
+                    <span className="md:hidden text-[13px] font-bold text-gray-900 uppercase">Total</span>
+                    <span className="text-gray-900 md:text-gray-500 font-bold md:font-medium">${(item.price * item.quantity).toFixed(2)}</span>
                   </div>
                 </div>
               )) : (
@@ -147,7 +159,7 @@ const ShopingCart = () => {
 
           {/* Right Column: Order Summary */}
           <div className="w-full lg:w-[35%]">
-            <div className="bg-[#f4f4f4] border border-gray-100 p-8">
+            <div className="bg-[#f4f4f4] border border-gray-100 p-6 md:p-8">
               <div className="text-[11px]  font-bold tracking-widest text-gray-900 uppercase pb-6 border-b border-white mb-6">
                 THERE ARE {items.reduce((acc, item) => acc + item.quantity, 0)} ITEMS IN YOUR CART
               </div>

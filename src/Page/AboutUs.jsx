@@ -69,15 +69,15 @@ const AboutUs = () => {
     <div className="bg-white text-gray-800">
       <HeaderPage />
 
-      <div className="p-5 flex gap-5 mt-10 rounded">
-        <div className="w-[70%] overflow-hidden rounded-sm shadow">
+      <div className="p-5 flex flex-col md:flex-row gap-5 mt-10 rounded">
+        <div className="w-full md:w-[70%] overflow-hidden rounded-sm shadow">
           <img 
             src="https://nov-minicom.myshopify.com/cdn/shop/files/about-us-1.jpg?v=1749029624&width=1296" 
             alt="img here" 
             className="w-full h-full object-cover transition-transform duration-1500 hover:scale-110"
           />
         </div>
-        <div className="w-[30%] overflow-hidden rounded-sm shadow">
+        <div className="w-full md:w-[30%] overflow-hidden rounded-sm shadow">
           <img 
             src="https://nov-minicom.myshopify.com/cdn/shop/files/about-us-2.jpg?v=1751102053&width=768" 
             alt="img here"  
@@ -91,12 +91,12 @@ const AboutUs = () => {
 
 
 
-<div className="flex-col text-center mt-10">
+<div className="flex-col text-center mt-10 px-5">
   <p className="text-sm text-gray-700 font-semibold">Real Customer Experience</p>
-  <h1 className="text-3xl font-bold text-black">Videos From Our Clients</h1>
+  <h1 className="text-2xl md:text-3xl font-bold text-black mt-2">Videos From Our Clients</h1>
 </div>
 
-<div className="flex gap-5 mt-10 p-5">
+<div className="flex flex-col md:flex-row gap-5 mt-10 p-5">
   <div className="relative group w-full">
     <img src="https://nov-minicom.myshopify.com/cdn/shop/files/about-us-video-1.jpg?v=1749029624&width=1920" alt="img here" className="rounded shadow w-full h-full object-cover"/>
     <div className="absolute inset-0 flex justify-center items-center pointer-events-none">

@@ -5,10 +5,24 @@ import { useNavigate } from 'react-router-dom';
 const MapSection = ({ mapSrc, storeInfo }) => {
   const navigate = useNavigate();
   return (
-    <div className="w-full sm:px-6 lg:px-8 py-8 md:py-12 bg-white">
-      <div className="w-full relative overflow-hidden rounded-2xl shadow-sm border-2 border-gray-100 h-[400px] md:h-[500px] lg:h-[600px]">
+    <div className="w-full px-4 sm:px-6 lg:px-8 py-8 md:py-12 bg-white">
+      <div className="w-full flex flex-col md:block relative max-w-[1400px] mx-auto">
+        <div className="w-full overflow-hidden rounded-2xl shadow-sm border-2 border-gray-100 h-[300px] md:h-[500px] lg:h-[600px]">
+          <iframe
+            src={mapSrc}
+            width="100%"
+            height="100%"
+            className="w-full h-full object-cover"
+            style={{ border: 0 }}
+            allowFullScreen=""
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Google Map Location"
+          ></iframe>
+        </div>
+        
         {storeInfo && (
-          <div className="absolute top-4 left-4 md:top-1/2 md:-translate-y-1/2 md:left-12 bg-brand-hover text-white p-6 md:p-8 rounded-xl max-w-sm z-10 shadow-2xl space-y-5">
+          <div className="mt-6 md:mt-0 md:absolute md:top-1/2 md:-translate-y-1/2 md:left-8 lg:left-12 bg-brand-hover text-white p-6 md:p-8 rounded-xl md:max-w-sm z-10 shadow-2xl space-y-5">
             {storeInfo.address && (
               <p className="text-sm md:text-base leading-relaxed">
                 <span className="text-yellow-500 font-semibold mr-2">Address:</span>
@@ -60,17 +74,6 @@ const MapSection = ({ mapSrc, storeInfo }) => {
             )}
           </div>
         )}
-        <iframe
-          src={mapSrc}
-          width="100%"
-          height="100%"
-          className="w-full h-full object-cover"
-          style={{ border: 0 }}
-          allowFullScreen=""
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          title="Google Map Location"
-        ></iframe>
       </div>
     </div>
   );

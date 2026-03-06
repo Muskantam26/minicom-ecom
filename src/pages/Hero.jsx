@@ -76,49 +76,49 @@ const handpickedEleganceData = [
     id: 1,
     name: "Modern Single Sofa Chair For Stylish Living Room",
     price: "$200.00",
-    image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80",
+    image: "https://nov-minicom.myshopify.com/cdn/shop/files/1-min_bdb6b918-6f94-45a7-b53e-4d9977e4c158.jpg?v=1749111975&width=1120",
   },
   {
     id: 2,
     name: "Decorative Cactus Plant Pot For Indoor Display",
     price: "$37.00",
-    image: "https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&fit=crop&q=80",
+    image: "//nov-minicom.myshopify.com/cdn/shop/files/1-min_44cdab73-bcb9-483d-ba6c-cbfc32321ed9.jpg?v=1749112427&width=260",
   },
   {
     id: 3,
     name: "Solid Wood TV Stand With Storage Drawers Design",
     price: "$135.00",
-    image: "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&q=80",
+    image: "//nov-minicom.myshopify.com/cdn/shop/files/1-min_2ee03dbe-b3f3-4ffe-a2f8-299ecbdfaa06.jpg?v=1749111269&width=260",
   },
   {
     id: 4,
     name: "Modern Wooden Lounge Chair With Wide Fabric Arms",
     price: "$155.00",
-    image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80",
+    image: "//nov-minicom.myshopify.com/cdn/shop/files/1-min_202fa2e4-302c-481c-aab5-74b98f061838.jpg?v=1749110906&width=260",
   },
   {
     id: 5,
     name: "Modern Low Profile Swivel Sofa With Soft Seat",
     price: "$125.00",
-    image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80",
+    image: "//nov-minicom.myshopify.com/cdn/shop/files/1-min_be47ec7a-ae18-44a0-ad6b-efeabb425930.jpg?v=1749110719&width=260",
   },
   {
     id: 6,
     name: "Minimalist White Ceramic Vases Set",
     price: "$45.00",
-    image: "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&q=80",
+    image: "//nov-minicom.myshopify.com/cdn/shop/files/1-min_0c6275f8-a24e-4702-90d0-bd01e49e1b67.jpg?v=1749111925&width=260",
   },
   {
     id: 7,
     name: "Classic Wooden Dining Chair With Curved Back",
     price: "$89.00",
-    image: "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&q=80",
+    image: "//nov-minicom.myshopify.com/cdn/shop/files/1-min_02d0e979-f8f4-49b4-bbc3-c4852675c021.jpg?v=1749111160&width=260",
   },
   {
     id: 8,
     name: "Round Coffee Table With Golden Metal Legs",
     price: "$210.00",
-    image: "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&q=80",
+    image: "//nov-minicom.myshopify.com/cdn/shop/files/1-min_dfb1df34-1c68-4ee5-8bfb-ae5b3f5e430b.jpg?v=1749111367&width=260",
   },
 ];
 
@@ -170,9 +170,9 @@ const featuredProductData = {
   description: "Donec dapibus tellus sem, quis aliquam libero pharetra non. Nam vitae fermentum leo. Pellentesque bibendum dui eu mi tempor sodales. Integer gravida odio in sem laoreet tempus. Nunc vehicula nibh mauris, id bibendum metus facilisis iaculis. Phasellus suscipit dictum ...",
   stockStatus: "50 Products in stock",
   images: [
-    "https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&fit=crop&q=80",
+    "//nov-minicom.myshopify.com/cdn/shop/files/1-min_be47ec7a-ae18-44a0-ad6b-efeabb425930.jpg?v=1749110719&width=260",
   ],
-  bgImage: "https://images.unsplash.com/photo-1618220179428-22790b46a013?auto=format&fit=crop&q=80",
+  bgImage: "https://nov-minicom.myshopify.com/cdn/shop/files/home1-img-featured.jpg?v=1750143747&width=1296",
   estimatedDelivery: "22 - 23 Jun, 2025",
   freeShipping: "On all order over $200.00",
 };
@@ -540,33 +540,33 @@ const faqData = {
 const Hero = () => {
   return (
     <>
-      <div className="relative w-full h-[90vh] bg-brand-hover overflow-hidden group">
+      <div className="relative w-full md:h-60 lg:h-[90vh] bg-brand-hover overflow-hidden group">
         {/* Background Slider */}
         <Slider slides={slides} slideDuration={3000} />
       </div>
-      <div className=" w-full  mt-10">
+      <div className=" w-full mt-5 ">
         <Ticker data={tickerData} />
       </div>
 
-      <div className="mt-20">
+      <div className="mt-5">
         <CategorySlider data={categorySliderData} />
       </div>
-      <div className="mt-20">
+      <div className="mt-5">
         <HandpickedElegance data={handpickedEleganceData} />
       </div>
-      <div className="mt-20 p-10">
+      <div className="mt-5 p-5">
         <ShoppingGuide data={shoppingGuideData} />
       </div>
 
-      <div className="mt-10">
+      <div className="mt-5">
         <BrandMarquee data={brandMarqueeData} />
       </div>
 
-      <div className="mt-20">
+      <div className="mt-5">
         <FeaturedProduct data={featuredProductData} />
       </div>
 
-      <div className="mt-20">
+      <div className="mt-5">
         <SectionHeading
           subtitle="THE ULTIMATE FURNITURE EDIT"
           title="EXCLUSIVE PICKS ELEVATE YOUR SPACE"
@@ -576,28 +576,28 @@ const Hero = () => {
 
     
 
-      <div className="mt-20 p-10">
+      <div className="mt-5 p-5">
         <StickySections data={stickySectionsData} />
       </div>
 
-      <div className="mt-20 mb-20">
+      <div className="mt-5 ">
         <CustomerReviews data={customerReviewsData} />
       </div>
-      <div className="mt-10 mb-20">
+      <div className="mt-5">
         <FollowUS data={followUsData} />
       </div>
-      <div className="mt-10 mb-20">
+      <div className="mt-5">
         <ProductGrid data={productGridData}/>
       </div>
       
-      <div className="mt-20">
+      <div className="mt-5">
         <CoreFeatures data={coreFeaturesData} />
       </div>
       
-      <div className="mt-20 ">
+      <div className="mt-5 ">
         <JournalSection data={journalData} />
       </div>
-        <div className="mt-10">
+        <div className="mt-5">
         <Faq data={faqData} />
       </div>
     </>

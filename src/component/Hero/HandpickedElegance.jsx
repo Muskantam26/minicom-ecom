@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Star, Eye, ShoppingBag, ArrowLeft, ArrowRight } from "lucide-react";
+import { Star, Eye, ShoppingBag } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-
-
+import { motion } from "framer-motion";
 
 const HandpickedElegance = ({ 
   data = [], 
@@ -24,7 +23,7 @@ const HandpickedElegance = ({
       else setVisibleItems(itemsPerRow);
     };
 
-    handleResize(); // Initial setup
+    handleResize(); 
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, [itemsPerRow]);
@@ -48,17 +47,17 @@ const HandpickedElegance = ({
   const currentPage = Math.ceil(currentIndex / visibleItems);
 
   return (
-    <div className="w-full max-w-screen-2xl mx-auto px-4 sm:px-8 py-10">
+    <div className="w-full  mx-auto px-4 ">
       {/* Header */}
-      <div className={`flex flex-wrap md:flex-nowrap items-center ${title || subtitle ? 'justify-between' : 'justify-end'} mb-8 pb-4`}>
+      <div className={`flex flex-wrap md:flex-nowrap items-center ${title || subtitle ? 'justify-between' : 'justify-end'}  `}>
         {(title || subtitle) && (
-        <div className="flex items-center gap-4 flex-grow w-full md:w-auto">
+        <div className="lg:flex md:flex-col-2  sm:flex-col-2 items-center gap-4 flex-grow w-full md:w-auto">
           {title && (
           <h2 className="text-xl md:text-2xl font-bold uppercase text-gray-900 whitespace-nowrap">
             {title}
           </h2>
           )}
-          {title && subtitle && <div className="h-px bg-brand-hover w-12 md:w-32"></div>}
+          {title && subtitle && <div className="h-px bg-brand-hover w-0  lg:w-40"></div>}
           {subtitle && (
           <span className="text-xs md:text-xs text-gray-400 font-medium uppercase tracking-wider truncate">
             {subtitle}
@@ -69,13 +68,29 @@ const HandpickedElegance = ({
 
         {/* Navigation */}
         {isSlider && (
-        <div className="flex items-center gap-4 mt-4 md:mt-0 justify-end w-full md:w-auto">
-          <button
+        <div className="flex items-center gap-4 mt-4 md:mt-0 md:justify-start lg:justify-end w-full md:w-auto">
+          <motion.button
+            whileHover="hover"
+            whileTap={{ scale: 0.9 }}
             onClick={prevSlide}
             className="text-gray-500 hover:text-black transition-colors"
           >
-            <ArrowLeft className="w-5 h-5" />
-          </button>
+            <motion.svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-5 h-5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              variants={{ hover: { x: -4 } }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            >
+              <path d="M19 12H5" />
+              <path d="M12 19l-7-7 7-7" />
+            </motion.svg>
+          </motion.button>
           <div className="flex items-center gap-2">
             {Array.from({ length: totalPages }).map((_, idx) => (
               <button
@@ -89,23 +104,38 @@ const HandpickedElegance = ({
               ></button>
             ))}
           </div>
-          <button
+          <motion.button
+            whileHover="hover"
+            whileTap={{ scale: 0.9 }}
             onClick={nextSlide}
             className="text-gray-500 hover:text-black transition-colors"
           >
-            <ArrowRight className="w-5 h-5" />
-          </button>
+            <motion.svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-5 h-5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              variants={{ hover: { x: 4 } }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            >
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </motion.svg>
+          </motion.button>
         </div>
         )}
       </div>
 
       {/* Product Slider/Grid Container */}
       <div className={isSlider ? "overflow-hidden" : ""}>
-        <div
-          className={`flex ${isSlider ? "transition-transform duration-500 ease-in-out" : "flex-wrap"} -mx-3`}
-          style={isSlider ? {
-            transform: `translateX(-${currentIndex * (100 / visibleItems)}%)`,
-          } : {}}
+        <motion.div
+          className={`flex ${!isSlider ? "flex-wrap" : ""} -mx-3`}
+          animate={isSlider ? { x: `-${currentIndex * (100 / visibleItems)}%` } : { x: 0 }}
+          transition={{ type: "tween", duration: 0.5, ease: "easeInOut" }}
         >
           {data.map((product) => (
             <div
@@ -114,7 +144,7 @@ const HandpickedElegance = ({
             >
               <div onClick={() => navigate(`/product/${product.id}`)} className="group flex flex-col cursor-pointer h-full">
                 {/* Image Container */}
-                <div className="relative aspect-[4/5] bg-[#f8f8f8] mb-4 overflow-hidden flex items-center justify-center p-6">
+                <div className="relative  overflow-hidden flex items-center justify-center ">
                   <img
                     src={product.image}
                     alt={product.name}
@@ -167,7 +197,7 @@ const HandpickedElegance = ({
               </div>
             </div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </div>
   );

@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { Button1 } from "../Btn/Button1";
 
 export const Slider = ({ slides, slideDuration = 5000, className = "" }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -13,89 +15,81 @@ export const Slider = ({ slides, slideDuration = 5000, className = "" }) => {
     return () => clearInterval(timer);
   }, [totalSlides, slideDuration]);
 
-  const handlePrev = () => {
-    if (totalSlides <= 1) return;
-    setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
-  };
+  if (!slides || totalSlides === 0) return null;
 
-  const handleNext = () => {
-    if (totalSlides <= 1) return;
-    setCurrentSlide((prev) => (prev + 1) % totalSlides);
-  };
+  const handlePrev = () => setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
+  const handleNext = () => setCurrentSlide((prev) => (prev + 1) % totalSlides);
 
-  if (!slides || slides.length === 0) return null;
+  const activeSlide = slides[currentSlide];
 
   return (
-    <div
-      className={`relative w-full h-full bg-brand-hover overflow-hidden group ${className}`}
-    >
+    <div className={`relative w-full h-full bg-brand-hover overflow-hidden group ${className}`}>
       {/* Background Images with Crossfade */}
       {slides.map((slide, index) => (
         <div
           key={slide.id || index}
-          className={`absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ease-in-out ${
+          className={`absolute inset-0 w-full h-full bg-cover bg-center transition-opacity duration-1000 ease-in-out ${
             index === currentSlide ? "opacity-80" : "opacity-0"
           }`}
           style={{ backgroundImage: `url("${slide.image}")` }}
         >
-          {/* Gradient Overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent" />
         </div>
       ))}
 
       {/* Slider Content */}
-      <div className="relative z-20 h-full flex flex-col justify-end pb-5 px-[3%] pt-20">
-        <div className="max-w-2xl text-white">
-          {/* Subheading */}
-          {slides[currentSlide].subheading && (
-            <h4
+      <div className="relative z-20 h-full flex flex-col justify-center md:justify-end items-center md:items-start pb-20 md:pb-5 px-[5%] md:px-[3%] pt-20 text-center md:text-left">
+        <div className="max-w-2xl text-white flex flex-col items-center md:items-start">
+          
+          {activeSlide.subheading && (
+            <motion.h4
               key={`sub-${currentSlide}`}
-              className="text-[10px] font-[var(--section-subheading-font-weight,500)] tracking-[var(--section-subheading-letter-spacing,1px)] uppercase mb-2 animate-[fadeInUp_0.2s_ease-out_forwards]"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.3 }}
+              className="text-[10px] md:text-xs font-medium tracking-widest uppercase mb-2"
             >
-              {slides[currentSlide].subheading}
-            </h4>
+              {activeSlide.subheading}
+            </motion.h4>
           )}
 
-          {/* Main Heading */}
-          {slides[currentSlide].heading && (
-            <h1
+          {activeSlide.heading && (
+            <motion.h1
               key={`head-${currentSlide}`}
-              className="text-xl md:text-5xl lg:text-2xl font-[var(--heading-font-weight,700)] leading-[1.2] mb-10 animate-[fadeInUp_0.7s_ease-out_forwards]"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="text-xl md:text-sm lg:text-4xl font-bold leading-tight mb-6 md:mb-10"
             >
-              {slides[currentSlide].heading.split("\n").map((line, i) => (
+              {activeSlide.heading.split("\n").map((line, i) => (
                 <React.Fragment key={i}>
                   {line}
-                  {i !==
-                    slides[currentSlide].heading.split("\n").length - 1 && (
-                    <br />
-                  )}
+                  {i !== activeSlide.heading.split("\n").length - 1 && <br />}
                 </React.Fragment>
               ))}
-            </h1>
+            </motion.h1>
           )}
 
-          {/* CTA Button */}
-          {slides[currentSlide].linkText && (
-            <button
+          {activeSlide.linkText && (
+            <motion.div
               key={`btn-${currentSlide}`}
-              className="bg-white text-black px-8 py-4 text-xs font-bold uppercase flex items-center gap-3 hover:bg-[var(--color-button)] hover:text-black transition-colors animate-[fadeInUp_0.9s_ease-out_forwards]"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
             >
-              {slides[currentSlide].linkText}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="12"
-                height="12"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M7 7h10v10" />
-                <path d="M7 17 17 7" />
-              </svg>
-            </button>
+              <Button1
+                variant="primary"
+                text={activeSlide.linkText}
+                iconPosition="right "
+                className="bg-white font-medium hover:bg-yellow-500 "
+                icon={
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M7 7h10v10" />
+                    <path d="M7 17 17 7" />
+                  </svg>
+                }
+              />
+            </motion.div>
           )}
         </div>
       </div>
@@ -103,86 +97,33 @@ export const Slider = ({ slides, slideDuration = 5000, className = "" }) => {
       {/* Bottom Slider Controls */}
       {totalSlides > 1 && (
         <div className="absolute bottom-10 left-0 w-full flex justify-center items-center gap-4 text-white z-10 text-xs font-bold">
-          <button
-            onClick={handlePrev}
-            className="hover:text-[var(--color-button)] transition-colors"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
+          <button onClick={handlePrev} className="hover:text-[var(--color-button)] transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="m15 18-6-6 6-6" />
             </svg>
           </button>
 
-          <span className="w-6 text-center text-white">
-            {String(currentSlide + 1).padStart(2, "0")}
-          </span>
+          <span className="w-6 text-center">{String(currentSlide + 1).padStart(2, "0")}</span>
 
-          {/* Progress Bar Container */}
-          <div className="w-48 h-[2px] bg-white/30 relative flex rounded-full overflow-hidden">
-            {/* Animated Progress indicator */}
-            <div
+          <div className="w-48 h-[2px] bg-white/30 relative rounded-full overflow-hidden">
+            <motion.div
               key={currentSlide}
-              className="absolute left-0 top-0 h-full bg-white transition-none"
-              style={{
-                animation: `progress ${slideDuration}ms linear forwards`,
-              }}
+              initial={{ width: "0%" }}
+              animate={{ width: "100%" }}
+              transition={{ duration: slideDuration / 1000, ease: "linear" }}
+              className="absolute left-0 top-0 h-full bg-white"
             />
           </div>
 
-          <span className="w-6 text-center text-[var(--color-button)]">
-            {String(totalSlides).padStart(2, "0")}
-          </span>
+          <span className="w-6 text-center text-[var(--color-button)]">{String(totalSlides).padStart(2, "0")}</span>
 
-          <button
-            onClick={handleNext}
-            className="hover:text-[var(--color-button)] transition-colors"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
+          <button onClick={handleNext} className="hover:text-[var(--color-button)] transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="m9 18 6-6-6-6" />
             </svg>
           </button>
         </div>
       )}
-
-      <style jsx>{`
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateX(50px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0px);
-          }
-        }
-        @keyframes progress {
-          from {
-            width: 0%;
-          }
-          to {
-            width: 100%;
-          }
-        }
-      `}</style>
     </div>
   );
 };

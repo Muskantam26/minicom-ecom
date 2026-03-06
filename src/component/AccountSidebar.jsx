@@ -1,8 +1,55 @@
 import React, { useState, useRef, useEffect } from "react";
 import { MainContent } from "../constant/MainContent";
 import { useNavigate } from "react-router-dom";
+import { motion } from "motion/react";
 
-// Simple close icon based on the current app icons
+const sidebarVariants = {
+  open: (height = 1000) => ({
+    clipPath: `circle(${height * 2 + 200}px at calc(100% - 52px) 44px)`,
+    transition: {
+      type: "spring",
+      stiffness: 20,
+      restDelta: 2,
+    },
+  }),
+  closed: {
+    clipPath: "circle(0px at calc(100% - 52px) 44px)",
+    transition: {
+      delay: 0.2, // wait for items to animate out
+      type: "spring",
+      stiffness: 400,
+      damping: 40,
+    },
+  },
+};
+
+const navVariants = {
+  open: {
+    transition: { staggerChildren: 0.07, delayChildren: 0.2 },
+  },
+  closed: {
+    transition: { staggerChildren: 0.05, staggerDirection: -1 },
+  },
+};
+
+const itemVariants = {
+  open: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      y: { stiffness: 1000, velocity: -100 },
+    },
+  },
+  closed: {
+    y: 50,
+    opacity: 0,
+    transition: {
+      y: { stiffness: 1000 },
+    },
+  },
+};
+
+
 const CloseIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -116,10 +163,12 @@ export const AccountSidebar = ({ isOpen, onClose }) => {
       />
 
       {/* Sidebar Panel */}
-      <div
-        className={`fixed top-0 right-0 h-full w-[400px] bg-white shadow-2xl z-[70] transform transition-transform duration-300 ease-in-out flex flex-col ${
-          isOpen ? "translate-x-0" : "translate-x-full"
-        }`}
+      <motion.div
+        initial={false}
+        animate={isOpen ? "open" : "closed"}
+        variants={sidebarVariants}
+        style={{ pointerEvents: isOpen ? "auto" : "none" }}
+        className="fixed top-0 right-0 h-full w-[400px] bg-white shadow-2xl z-[70] flex flex-col"
       >
         {/* Header */}
         <div className="flex items-center justify-between px-8 py-6 pb-4">
@@ -137,20 +186,20 @@ export const AccountSidebar = ({ isOpen, onClose }) => {
         </div>
 
         {/* Scrollable Content */}
-        <div className="flex-1 overflow-y-auto px-8 pb-8 flex flex-col gap-8">
+        <motion.div variants={navVariants} className="flex-1 overflow-y-auto px-8 pb-8 flex flex-col gap-8">
           
           {/* Customer Account Section */}
-          <div className="flex flex-col gap-4">
+          <motion.div variants={itemVariants} className="flex flex-col gap-4">
             <h3 className="font-bold text-xs text-[#3f5364]  tracking-wider mb-2">CUSTOMER ACCOUNT</h3>
             <span onClick={() => { navigate("/login"); onClose(); }} className="text-gray-800 text-xs hover:text-[var(--color-button)] font-medium transition-colors cursor-pointer">Login</span>
             <span onClick={() => { navigate("/register"); onClose(); }} className="text-gray-800 text-xs hover:text-[var(--color-button)] font-medium transition-colors cursor-pointer">Register</span>
             <span onClick={() => { navigate("/wishlist"); onClose(); }} className="text-gray-800 text-xs hover:text-[var(--color-button)] font-medium transition-colors cursor-pointer">Wishlist</span>
             <span onClick={() => { navigate("/checkout"); onClose(); }} className="text-gray-800 text-xs hover:text-[var(--color-button)] font-medium transition-colors cursor-pointer">Check out</span>
             <div className="pt-2"><hr className="border-gray-200" /></div>
-          </div>
+          </motion.div>
 
           {/* Customer Care Section */}
-          <div className="flex flex-col gap-4">
+          <motion.div variants={itemVariants} className="flex flex-col gap-4">
             <h3 className="font-bold text-xs text-[#3f5364] tracking-wider mb-2">CUSTOMER CARE</h3>
             <span onClick={() => { navigate("/Frequently-Asked-Questions"); onClose(); }} className="text-gray-600 hover:text-[var(--color-button)] transition-colors text-xs cursor-pointer">FAQs</span>
             <span onClick={() => { navigate("/terms-of-service"); onClose(); }} className="text-gray-600 text-xs hover:text-[var(--color-button)] transition-colors cursor-pointer">Terms of Service</span>
@@ -158,22 +207,22 @@ export const AccountSidebar = ({ isOpen, onClose }) => {
             <span onClick={() => { navigate("/contact"); onClose(); }} className="text-gray-600 text-xs hover:text-[var(--color-button)] transition-colors cursor-pointer">Contact Us</span>
             <span onClick={() => { navigate("/gift-card"); onClose(); }} className="text-gray-600 text-xs hover:text-[var(--color-button)] transition-colors cursor-pointer">Gift Card</span>
             <div className="pt-2"><hr className="border-gray-200" /></div>
-          </div>
+          </motion.div>
 
           {/* Currency Section */}
-          <div className="flex flex-col gap-3">
+          <motion.div variants={itemVariants} className="flex flex-col gap-3">
             <h3 className="font-bold text-xs text-[#3f5364] tracking-wider mb-1">CURRENCY</h3>
             <CustomSelect options={currencyOptions} value={currency} onChange={setCurrency} />
-          </div>
+          </motion.div>
 
           {/* Language Section */}
-          <div className="flex flex-col gap-3 mb-8">
+          <motion.div variants={itemVariants} className="flex flex-col gap-3 mb-8">
             <h3 className="font-semibold text-xs text-[#3f5364] tracking-wider mb-1">LANGUAGE</h3>
             <CustomSelect options={languageOptions} value={language} onChange={setLanguage} />
-          </div>
+          </motion.div>
           
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </>
   );
 };

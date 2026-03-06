@@ -14,7 +14,7 @@ const SectionHeading = ({
       )}
 
       {title && (
-        <h2 className="text-3xl text-black font-bold uppercase tracking-wide">
+        <h2 className="text-2xl text-black font-semibold uppercase tracking-tight">
           {title}
         </h2>
       )}

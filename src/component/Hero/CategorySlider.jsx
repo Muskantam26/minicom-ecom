@@ -7,15 +7,15 @@ export const CategorySlider = ({ data = [] }) => {
   const extendedCategories = [...data, ...data];
   return (
     <div className="w-full bg-white overflow-hidden z-10 relative flex">
-      {/* Ticker Container */}
+     
       <div className="flex animate-ticker whitespace-nowrap gap-6 pl-6">
-        {/* Render items twice for infinite loop */}
+      
         {[...Array(2)].map((_, i) => (
           <div key={i} className="flex gap-6 min-w-max">
             {extendedCategories.map((cat, index) => (
               <div
                 key={index}
-                className="group w-[320px] md:w-[300px] flex flex-col rounded-[24px] cursor-pointer bg-[#f7f7f7] p-2"
+                className="group w-[250px] md:w-[300px] flex flex-col rounded-[24px] cursor-pointer bg-[#f7f7f7] p-2"
               >
                 {/* Image Section */}
                 <div className="w-full h-[280px] rounded-[16px] overflow-hidden bg-gray-200">
@@ -42,7 +42,7 @@ export const CategorySlider = ({ data = [] }) => {
                   </div>
                 </div>
               </div>
-            ))}
+            ))} 
           </div>
         ))}
       </div>

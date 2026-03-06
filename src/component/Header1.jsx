@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 import { MainContent } from "../constant/MainContent";
 import { Button1 } from "./Btn/Button1";
 import { Input1 } from "./inputs/input1";
 import { MegaMenu } from "./MegaMenu";
 import { AccountSidebar } from "./AccountSidebar";
 import { CartSidebar } from "./CartSidebar";
+import MobileSidebar from "./sidebars.jsx/MobileSidebar";
 
 const CloseIcon = () => (
   <svg
@@ -27,8 +29,8 @@ const CloseIcon = () => (
 const MenuIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="20"
-    height="20"
+    width="24"
+    height="24"
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
@@ -45,8 +47,8 @@ const MenuIcon = () => (
 const SearchIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="18"
-    height="18"
+    width="20"
+    height="20"
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
@@ -110,67 +112,106 @@ const BagIcon = () => (
   </svg>
 );
 
-const Header1 = () => {
+const Header1 = ({ isAccountOpen, setIsAccountOpen }) => {
   const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isAccountOpen, setIsAccountOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const location = useLocation();
 
   const isHome = location.pathname === '/';
 
   return (
+    
     <div className={`${isHome ? 'absolute top-0 left-0 bg-transparent' : 'relative bg-[#0f2e26] '} w-full z-50`}>
-      <div className="w-full py-3 px-8 flex items-center justify-between text-white font-primary gap-6 z-50 relative">
-      {/* Logo Section */}
-      <div className="cursor-pointer">
-        <img src={MainContent.appLogo} alt="Logo" className="w-50" />
-      </div>
-
-      {/* Menu Button */}
-
-      {/* Search Bar */}
-      <div className="flex gap-2 w-full ml-6">
-        <Button1 
-          variant="outline" 
-          text="Menu" 
-          icon={isMenuOpen ? <CloseIcon /> : <MenuIcon />} 
-          onClick={() => setIsMenuOpen(!isMenuOpen)} 
-          isActive={isMenuOpen}
-        />
-        <div className="flex items-center flex-1 h-13 bg-white rounded">
-          <Input1 />
+      {/* Desktop Header */}
+      <div className="hidden lg:flex w-full py-3 px-8 items-center justify-between text-white font-primary gap-6 z-50 relative">
+        {/* Logo Section */}
+        <div className="cursor-pointer" onClick={() => navigate('/')}>
+          <img src={MainContent.appLogo} alt="Logo" className="w-50" />
         </div>
-        <Button1
-          variant="primary"
-          text="Search"
-          icon={<SearchIcon />}
-          iconPosition="right"
-        />
+
+        {/* Search Bar */}
+        <div className="flex gap-2 w-full ml-6">
+          <Button1 
+            variant="outline" 
+            text="Menu" 
+            icon={
+              <AnimatePresence mode="wait" initial={false}>
+                <motion.div
+                  key={isMenuOpen ? "close" : "menu"}
+                  initial={{ opacity: 0, rotate: -90, scale: 0.5 }}
+                  animate={{ opacity: 1, rotate: 0, scale: 1 }}
+                  exit={{ opacity: 0, rotate: 90, scale: 0.5 }}
+                  transition={{ duration: 0.2 }}
+                  className="flex items-center justify-center"
+                >
+                  {isMenuOpen ? <CloseIcon /> : <MenuIcon />}
+                </motion.div>
+              </AnimatePresence>
+            } 
+            onClick={() => setIsMenuOpen(!isMenuOpen)} 
+            isActive={isMenuOpen}
+          />
+          <div className="flex items-center flex-1 h-13 bg-white rounded">
+            <Input1 />
+          </div>
+          <Button1
+            variant="primary"
+            text="Search"
+            icon={<SearchIcon />}
+            iconPosition="right"
+          />
+        </div>
+
+        {/* Right Actions */}
+        <div className="flex items-center gap-8 shrink-0">
+          {/* Account */}
+          <Button1 variant="transparent" text="Account" icon={<UserIcon />} onClick={() => setIsAccountOpen(true)} />
+
+          {/* Wishlist */}
+          <span onClick={() => navigate("/wishlist")} className="cursor-pointer inline-flex">
+          <Button1
+            variant="transparent"
+            text="Wishlist"
+            icon={<StarIcon />}
+            badge="1"
+          />
+          </span>
+
+          <Button1 variant="cart" icon={<BagIcon />} badge="0" price="$0.00" onClick={() => setIsCartOpen(true)} />
+        </div>
       </div>
 
-      {/* Right Actions */}
-      <div className="flex items-center gap-8 shrink-0">
-        {/* Account */}
-        <Button1 variant="transparent" text="Account" icon={<UserIcon />} onClick={() => setIsAccountOpen(true)} />
+      {/* Mobile Header */}
+      <div className="flex lg:hidden w-full py-4 px-4 items-center justify-between text-white font-primary z-50 relative">
+        <div className="flex items-center gap-3">
+          <button onClick={() => setIsMenuOpen(true)}>
+            <MenuIcon />
+          </button>
+          <button>
+            <SearchIcon />
+          </button>
+        </div>
 
-        {/* Wishlist */}
-        <span onClick={() => navigate("/wishlist")} className="cursor-pointer inline-flex">
-        <Button1
-          variant="transparent"
-          text="Wishlist"
-          icon={<StarIcon />}
-          badge="1"
-      
-         />
-        </span>
+        <div className="flex-1 flex justify-center cursor-pointer" onClick={() => navigate('/')}>
+          <img src={MainContent.appLogo} alt="Logo" className="h-8 " />
+        </div>
 
-        <Button1 variant="cart" icon={<BagIcon />} badge="0" price="$0.00" onClick={() => setIsCartOpen(true)} />
-      </div>
+        <div className="flex items-center gap-4">
+          <button className="relative" onClick={() => setIsCartOpen(true)}>
+            <BagIcon />
+            <span className="absolute -top-1 -right-2 bg-yellow-400 text-black text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">1</span>
+          </button>
+        </div>
       </div>
 
       {/* Mega Menu Overlay */}
-      <MegaMenu isOpen={isMenuOpen} isHome={isHome} />
+      <div className="hidden lg:block">
+        <MegaMenu isOpen={isMenuOpen} isHome={isHome} />
+      </div>
+      
+      {/* Mobile Sidebar */}
+      <MobileSidebar isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
 
       {/* Account Sidebar */}
       <AccountSidebar isOpen={isAccountOpen} onClose={() => setIsAccountOpen(false)} />
