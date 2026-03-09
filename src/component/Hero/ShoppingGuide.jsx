@@ -4,15 +4,15 @@ import { motion } from "framer-motion";
 
 
 const ShoppingGuide = ({ data = [] }) => {
-  const [activeTab, setActiveTab] = useState("1");
+  const [activeTab, setActiveTab] = useState(1);
 
   const handleClick = (id) => {
     setActiveTab(id);
   };
 
   return (
-    <div className="w-full bg-gray-100 lg:p-10  rounded-2xl ">
-      <div className="max-w-screen-2xl mx-auto px-4 sm:px-8 flex flex-col-reverse lg:flex-row gap-8 lg:gap-24">
+    <div className="w-full bg-gray-100 lg:p-10   rounded-2xl ">
+      <div className="max-w-screen-2xl mx-auto px-4 sm:px-8 flex flex-col-reverse lg:flex-row gap-8  lg:gap-24">
         {/* Left Content */}
         <div className="w-full lg:w-1/2 flex flex-col justify-center">
           {/* Section Title */}
@@ -50,7 +50,7 @@ const ShoppingGuide = ({ data = [] }) => {
                     {/* Vertical Line */}
                     {index !== data.length - 1 && (
                       <div
-                        className={`w-[2px] h-full min-h-[40px] mt-2 transition-colors duration-300 ${
+                        className={`w-[2px] h-full  mt-2 transition-colors duration-300 ${
                           isActiveTab ? "bg-yellow-400" : "bg-transparent"
                         }`}
                       ></div>
@@ -75,7 +75,7 @@ const ShoppingGuide = ({ data = [] }) => {
                           : "max-h-0 opacity-0 mt-0"
                       }`}
                     >
-                      <p className="text-gray-500 leading-relaxed text-xs md:text-base pr-4">
+                      <p className="text-gray-500 leading-relaxed text-xs md:text-base pr-4 text-justify">
                         {step.content}
                       </p>
                     </div>

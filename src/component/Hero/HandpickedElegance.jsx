@@ -14,7 +14,6 @@ const HandpickedElegance = ({
   const [currentIndex, setCurrentIndex] = useState(0);
   const [visibleItems, setVisibleItems] = useState(itemsPerRow);
 
-  // Handle responsive visible items count
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 640) setVisibleItems(1);
@@ -47,7 +46,7 @@ const HandpickedElegance = ({
   const currentPage = Math.ceil(currentIndex / visibleItems);
 
   return (
-    <div className="w-full  mx-auto px-4 ">
+    <div className="w-full  mx-auto ">
       {/* Header */}
       <div className={`flex flex-wrap md:flex-nowrap items-center ${title || subtitle ? 'justify-between' : 'justify-end'}  `}>
         {(title || subtitle) && (
@@ -68,7 +67,7 @@ const HandpickedElegance = ({
 
         {/* Navigation */}
         {isSlider && (
-        <div className="flex items-center gap-4 mt-4 md:mt-0 md:justify-start lg:justify-end w-full md:w-auto">
+        <div className="flex items-center gap-4 mt-4 md:mt-0 md:justify-center lg:justify-end w-full md:w-auto">
           <motion.button
             whileHover="hover"
             whileTap={{ scale: 0.9 }}

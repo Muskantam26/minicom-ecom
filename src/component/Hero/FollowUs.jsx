@@ -40,7 +40,7 @@ const FollowUS = ({ data }) => {
       <div className=" mx-auto flex flex-col lg:flex-row items-center justify-between px-3 sm:px-6 lg:px-5 h-auto lg:h-[700px] relative">
         
         {/* Left Side Content */}
-        <div className="w-full lg:w-1/3 flex flex-col justify-center gap-4 md:gap-6 lg:pr-5 md:py-10 relative items-center text-center lg:items-start lg:text-left">
+        <div className="w-full lg:w-1/3 flex flex-col justify-center gap-4 mt-5 relative items-center text-center lg:items-start lg:text-left">
           <div className="flex items-center gap-3 md:gap-4">
             <img 
               src={content.profileImage} 

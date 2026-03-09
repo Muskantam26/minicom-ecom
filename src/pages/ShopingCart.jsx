@@ -82,7 +82,7 @@ const ShopingCart = () => {
     <div>
       <HeaderPage title={"Shopping Cart"}/>
       
-      <div className="max-w-[1400px] mx-auto px-4 md:px-8 py-12">
+      <div className=" w-full mx-auto px-4 lg:px-8 py-8">
         <div className="flex flex-col lg:flex-row gap-8">
           
           {/* Left Column: Cart Table */}
@@ -165,16 +165,16 @@ const ShopingCart = () => {
               </div>
               
               <div className="flex justify-between items-center mb-6">
-                <span className="text-[14px] font-bold text-gray-900 uppercase tracking-widest">TOTAL:</span>
+                <span className="text-[13px] font-bold text-gray-900 uppercase tracking-widest">TOTAL:</span>
                 <span className="text-[24px] font-bold text-gray-900">${total.toFixed(2)}</span>
               </div>
 
-              <div className="flex justify-between items-start mb-10 text-[13px]">
-                <span className="font-bold text-gray-900 uppercase tracking-widest w-[100px]">SHIPPING :</span>
+              <div className="flex justify-between items-start mb-10 text-[13px] w-full">
+                <span className="font-bold text-gray-900 uppercase tracking-widest ">SHIPPING:</span>
                 <span className="text-gray-500 text-right leading-relaxed">
                   Shipping & taxes calculated at checkout
                 </span>
-              </div>
+              </div>  
 
               <div className="mb-4">
                 <div className="text-[#3b9f67] text-[13px] font-bold mb-4 uppercase tracking-wide">
@@ -203,7 +203,7 @@ const ShopingCart = () => {
 
         </div>
 
-        {/* You may also like these products */}
+        {/*You may also like these products */}
 
         <div className="mt-20">
           <h1 className='text-black text-2xl font-bold'>You may also like these products</h1>
@@ -213,8 +213,7 @@ const ShopingCart = () => {
             isSlider={false}
             title="" 
             subtitle=""
-            
-          />
+         />  
         </div>
       </div>
     </div>

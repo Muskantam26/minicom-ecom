@@ -36,7 +36,7 @@ const JournalSection = ({ data = [] }) => {
   const currentPage = Math.ceil(currentIndex / visibleItems);
 
   return (
-    <div className="w-full max-w-screen-2xl mx-auto px-4 sm:px-8 py-10 md:py-16">
+    <div className="w-full max-w-screen-2xl mx-auto  sm:px-8 py-10 md:py-16">
       
       {/* Mobile-centric Header & Control Layout (matches the screenshot) */}
       <div className="flex flex-col mb-6 md:mb-10">

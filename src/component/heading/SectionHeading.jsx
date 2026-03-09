@@ -14,13 +14,13 @@ const SectionHeading = ({
       )}
 
       {title && (
-        <h2 className="text-2xl text-black font-semibold uppercase tracking-tight">
+        <h2 className="sm:text-xl lg:text-2xl  text-black font-semibold uppercase tracking-tight">
           {title}
         </h2>
       )}
 
       {description && (
-        <p className="text-sm text-gray-600 max-w-4xl leading-relaxed mt-4">
+        <p className="text-sm text-gray-600 text-justify  leading-relaxed   ">
           {description}
         </p>
       )}

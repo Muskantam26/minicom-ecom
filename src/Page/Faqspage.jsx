@@ -53,7 +53,9 @@ const Faqs = () => {
   return (
     <div>
       <HeaderPage title="Faqs" />
-      <Faq data={faqsPageData} />
+      <div className=" w-full mx-auto  ">
+        <Faq data={faqsPageData} />
+      </div>
     </div>
   )
 }

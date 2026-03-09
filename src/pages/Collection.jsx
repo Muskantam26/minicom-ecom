@@ -118,14 +118,15 @@ const coreFeaturesData = {
     
         <HeaderPage/>
 
-        <div className='relative z-20    mx-auto px-4 lg:px-10'>
+        <div className="p-4 w-full mx-auto">
+        <div className='relative z-20 mx-auto'>
           <CollectionProduct/>
         </div>
 
-    <div className='flex flex-col lg:flex-row p-4 lg:p-5 mt-5 relative'>
+    <div className='flex flex-col lg:flex-row mt-5 relative'>
          
          {/* Mobile Filter Button */}
-         <div className='lg:hidden  flex justify-start'>
+         <div className='lg:hidden  flex justify-start p-4'>
            <button onClick={() => setIsFilterOpen(true)} className='flex items-center gap-2 font-bold text-lg cursor-pointer hover:text-gray-600 transition-colors'>
              <SlidersHorizontal className='w-6 h-6' /> FILTER <ChevronDown className='w-5 h-5' />
            </button>
@@ -143,7 +144,7 @@ const coreFeaturesData = {
             
             
            </div>
-           <div className="p-5">
+           <div className="p-4">
              <SidebarFilter/>
            </div>
          </div>
@@ -171,13 +172,13 @@ const coreFeaturesData = {
         />
 
         <div className="flex justify-center">
-          <button className='bg-yellow-400 py-3 px-8 lg:p-5 lg:px-15 lg:ml-[25%] xl:ml-80 rounded text-xs font-medium flex justify-center items-center hover:bg-[#d8a849] hover:text-white transition-colors duration-300'>Load More Items</button>
+          <button className='bg-yellow-400 py-3 px-8 lg:p-5 lg:px-15 xl:mr-80 rounded text-xs font-medium flex justify-left items-center hover:bg-[#d8a849] hover:text-white transition-colors duration-300'>Load More Items</button>
         </div>
         
         </div>
        </div>
 
-<div className=''><Tags/></div>
+<div className='mt-5'><Tags/></div>
      
 
        <div className=''>
@@ -191,6 +192,7 @@ const coreFeaturesData = {
         title=''
         subtitle=''
         />
+       </div>
        </div>
     </div>
   )

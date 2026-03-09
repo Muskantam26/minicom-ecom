@@ -14,8 +14,8 @@ const Faq = ({ data }) => {
 
   if (data.isPageLayout) {
     return (
-      <div className='w-full bg-white py-12 md:py-20 px-4 sm:px-6 md:px-8 mx-auto'>
-        <div className='max-w-4xl mx-auto mb-8 md:mb-10'>
+      <div className='w-full bg-white  p-5   mx-auto'>
+        <div className=' mx-auto  md:mb-10'>
           
           {/* Top Paragraphs */}
           {data.topParagraphs && data.topParagraphs.length > 0 && (

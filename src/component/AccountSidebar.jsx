@@ -84,7 +84,7 @@ const CustomSelect = ({ options, value, onChange }) => {
   const selectedOption = options.find((opt) => opt.value === value) || options[0];
 
   return (
-    <div className="relative" ref={dropdownRef}>
+    <div className="relative " ref={dropdownRef}>
       {/* Dropdown Menu (Opens Upwards) */}
       {isDropdownOpen && (
         <div className="absolute left-0 bottom-full w-full bg-white border border-gray-100 shadow-[0_-5px_15px_rgba(0,0,0,0.05)] z-10 flex flex-col">
@@ -108,7 +108,7 @@ const CustomSelect = ({ options, value, onChange }) => {
 
       {/* Trigger */}
       <div
-        className="w-full bg-[#f6f6f6] border-none text-sm font-medium text-gray-800 rounded-sm px-4 py-3.5 cursor-pointer flex justify-between items-center"
+        className="w-full bg-[#f6f6f6] border-none text-sm font-medium text-gray-800 rounded-sm px-4  py-3.5 cursor-pointer flex justify-between items-center"
         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
       >
         <div className="flex items-center gap-2">
@@ -156,7 +156,7 @@ export const AccountSidebar = ({ isOpen, onClose }) => {
     <>
       {/* Overlay */}
       <div
-        className={`fixed inset-0 bg-brand-hover/50 transition-opacity duration-300 z-[60] ${
+        className={`fixed inset-0  bg-brand-hover/50 transition-opacity duration-300 z-[60] ${
           isOpen ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
         onClick={onClose}
@@ -168,7 +168,7 @@ export const AccountSidebar = ({ isOpen, onClose }) => {
         animate={isOpen ? "open" : "closed"}
         variants={sidebarVariants}
         style={{ pointerEvents: isOpen ? "auto" : "none" }}
-        className="fixed top-0 right-0 h-full w-[400px] bg-white shadow-2xl z-[70] flex flex-col"
+        className="fixed top-0 right-0 h-full  bg-white shadow-2xl z-[70] flex flex-col"
       >
         {/* Header */}
         <div className="flex items-center justify-between px-8 py-6 pb-4">

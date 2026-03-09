@@ -48,7 +48,7 @@ const FeaturedProduct = ({
       </div>
 
       {/* Main Content Area */}
-      <div className="w-full flex flex-col lg:flex-row relative z-10 p-4 sm:p-6 lg:p-0 items-center lg:items-stretch">
+      <div className="w-full flex flex-col lg:flex-row relative z-10   lg:p-0 items-center lg:items-stretch">
         {/* Visuals part */}
         <div className="w-full lg:w-[60%] flex items-center justify-center relative min-h-[350px] sm:min-h-[500px] lg:min-h-[600px]">
           {/* Vertical rotated texts */}
@@ -92,7 +92,7 @@ const FeaturedProduct = ({
           <div className="text-xl sm:text-2xl lg:text-xl font-bold text-gray-900 mb-4 sm:mb-6">
             {data.price}
           </div>
-          <p className="text-gray-500 text-sm sm:text-base leading-relaxed mb-4 sm:mb-6">
+          <p className="text-gray-500 text-sm sm:text-base leading-relaxed mb-4 sm:mb-6 text-justify">
             {data.description}
           </p>
 

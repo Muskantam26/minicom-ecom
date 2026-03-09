@@ -43,10 +43,10 @@ const Checkout = () => {
   return (
     <div className="min-h-screen bg-white font-sans text-gray-800">
       {/* Container */}
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row h-full lg:min-h-screen">
+      <div className="mx-auto flex flex-col lg:flex-row ">
         
         {/* Left Column - Form */}
-        <div className="w-full lg:w-[55%] xl:w-[60%] p-6 lg:py-12 lg:pr-12 xl:pr-16 order-2 lg:order-1 ml-auto lg:max-w-3xl">
+        <div className="w-full  p-6 lg:py-12 lg:pr-12 xl:pr-16 order-2 lg:order-1">
           
           <div className="space-y-10 lg:pl-10">
             {/* Contact Section */}

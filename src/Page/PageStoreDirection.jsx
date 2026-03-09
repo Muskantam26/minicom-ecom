@@ -22,7 +22,9 @@ const PageStoreDirection = () => {
   return (
     <div>
         <HeaderPage/>
+        <div className=" w-full mx-auto  lg:px-8 ">
         <MapSection mapSrc="https://www.google.com/maps?q=Bhopal&output=embed" storeInfo={storeInfo} />
+        </div>
     </div>
   )
 }

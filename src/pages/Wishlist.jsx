@@ -29,7 +29,7 @@ const Wishlist = () => {
     <div className="bg-white min-h-screen">
       <HeaderPage title="Page Wishlist" />
       
-      <div className="max-w-7xl mx-auto px-4 md:px-6 mt-8 md:mt-12">
+      <div className=" w-full mx-auto px-4 lg:px-8 py-8 mt-8 md:mt-12">
         {wishlist.length > 0 ? (
           <div className="flex flex-col">
             {wishlist.map((item) => (

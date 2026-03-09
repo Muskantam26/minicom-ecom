@@ -111,7 +111,7 @@ const Products = () => {
   };
 
   return (
-    <div className="w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div className=" w-full mx-auto p-4">
       {/* Breadcrumb */}
       <div className="text-xs text-gray-900 mb-6 font-medium mt-2 md:mt-5">
         <span onClick={() => navigate("/")} className="hover:underline cursor-pointer">Home</span>
@@ -137,10 +137,10 @@ const Products = () => {
           </div>
           
           {/* Main Image */}
-          <div className="flex-1 bg-gray-50 relative flex items-center justify-center p-6 sm:p-12 rounded  h-100">
+          <div className="flex-1  relative flex items-center justify-  rounded ">
             <button 
               onClick={handlePrevImage}
-              className="absolute left-2 sm:left-4 w-8 h-8 sm:w-10 sm:h-10 bg-white rounded-full flex items-center justify-center shadow hover:bg-gray-100 transition disabled:opacity-50 z-10"
+              className="absolute  w-8 h-8 sm:w-10 sm:h-10 bg-white rounded-full flex items-center justify-center shadow hover:bg-gray-100 transition disabled:opacity-50 z-10"
             >
               <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
@@ -151,7 +151,7 @@ const Products = () => {
             />
             <button 
               onClick={handleNextImage}
-              className="absolute right-2 sm:right-4 w-8 h-8 sm:w-10 sm:h-10 bg-white rounded-full flex items-center justify-center shadow hover:bg-gray-100 transition disabled:opacity-50 z-10"
+              className="absolute right-0 sm:right-2 w-8 h-8 sm:w-10 sm:h-10 bg-white rounded-full flex items-center justify-center shadow hover:bg-gray-100 transition disabled:opacity-50 z-10"
             >
               <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
@@ -264,9 +264,9 @@ const Products = () => {
           </div>
 
           {/* Benefits Box */}
-          <div className="border border-gray-200 rounded-xl p-6 sm:p-8 mb-8 text-center">
+          <div className="border border-gray-200 rounded-xl   mb-8 text-center">
             <h3 className="text-[13px] font-bold mb-6">THE BENEFITS OF CHOOSING US</h3>
-            <div className="grid grid-cols-4 md:grid-cols-4 gap-6 sm:gap-4">
+            <div className="grid grid-cols-4 md:grid-cols-4 gap-6 p-4 sm:gap-4">
               <div className="flex flex-col items-center gap-3">
                 <Leaf className="w-7 h-7" strokeWidth={1.5} />
                 <span className="text-[10px] font-bold whitespace-nowrap">ECO-FRIENDLY<br/>MATERIALS</span>
@@ -302,9 +302,9 @@ const Products = () => {
       </div>
 
       {/* Product Tabs Section */}
-      <div className="mt-16 md:mt-20 w-full mb-12 md:mb-16 border-t md:border-t-0 border-gray-100 pt-8 md:pt-0">
+      <div className="mt-10 w-full  border-t md:border-t-0 border-gray-100 ">
         {/* Tab Headers */}
-        <div className="flex flex-wrap gap-4 sm:gap-8 md:gap-16 mb-8 overflow-x-auto scrollbar-hide">
+        <div className="flex  gap-4 sm:gap-8 md:gap-16 mb-8 overflow-x-auto scrollbar-hide">
           {['Description', 'Delivery policy', 'Shipping & Return', 'Custom Tab'].map((tab) => (
             <button
               key={tab}
@@ -321,7 +321,7 @@ const Products = () => {
         {/* Tab Content */}
         <div className="text-[14px] text-gray-500 leading-[1.8] w-full">
           {activeTab === 'Description' && (
-            <div className="space-y-5">
+            <div className="space-y-5 text-justify">
               <p>
                 Donec dapibus tellus sem, quis aliquam libero pharetra non. Nam vitae fermentum leo. Pellentesque bibendum dui eu mi tempor sodales. Integer gravida odio in sem laoreet tempus. Nunc vehicula nibh mauris, id bibendum metus facilisis iaculis. Phasellus suscipit dictum lacus eu auctor. Duis commodo faucibus lectus, et accumsan quam egestas at. Praesent eros mi, condimentum sit amet felis quis, hendrerit ullamcorper turpis. Etiam vel cursus elit, ut semper velit. Aenean sagittis leo massa, fermentum sollicitudin sem facilisis vel. Suspendisse potenti. Fusce porta tincidunt interdum.
               </p>
@@ -341,7 +341,7 @@ const Products = () => {
 
           {activeTab === 'Delivery policy' && (
             <div>
-              <p>Delivery policy information will be displayed here.</p>
+              <p className='text-justify'>Delivery policy information will be displayed here.</p>
             </div>
           )}
 
@@ -359,17 +359,17 @@ const Products = () => {
         </div>
       </div>
 
-      <div className="mt-16 md:mt-20">
+      <div className="">
         <CoreFeatures data={coreFeaturesData} />
       </div>
       
       {/* Reviews Section */}
-      <div className="mb-16 md:mb-20 mt-16">
+      <div className="">
         <ProductReviews />
       </div>
 
       {/* Related Products */}
-      <h2 className="text-xl md:text-2xl font-bold text-center mb-6 md:mb-8">PRODUCT RELATED</h2>
+      <h2 className="text-xl md:text-2xl font-bold text-center mt-5">PRODUCT RELATED</h2>
       <HandpickedElegance data={handpickedEleganceData} title="" subtitle="" />
             
       <h2 className="text-xl md:text-2xl font-bold text-center mt-16 mb-6 md:mb-8">RECENTLY VIEWED PRODUCTS</h2>

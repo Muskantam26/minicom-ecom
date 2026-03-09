@@ -36,7 +36,7 @@ const Footer = ({ data = footerData }) => {
         <div className="lg:grid lg:grid-cols-12 flex flex-col md:gap-5 lg:gap-5">
           
           {/* Logo and Intro Section */}
-          <div className="lg:col-span-4 flex flex-col gap-6 footer-img w-full justify-center px-6 py-10 md:px-10 md:py-10 relative">
+          <div className="lg:col-span-4 flex flex-col gap-6 footer-img w-full justify-center px-4 py-10 md:px-10 md:py-10 relative">
             <div className="flex items-center gap-3">
              <img src={MainContent.appLogo} alt="Logo here" className="w-[150px] md:w-40" />
             </div>
@@ -58,7 +58,7 @@ const Footer = ({ data = footerData }) => {
           </div>
 
           {/* Right Side Sections */}
-          <div className="lg:col-span-8 px-6 pt-6 md:px-10 md:pt-10">
+          <div className="lg:col-span-8 px-4 pt-6 md:px-10 md:pt-10">
             {/* Newsletter Row */}
             <div className="flex flex-col lg:grid lg:grid-cols-12 gap-4 lg:gap-8 mb-12 lg:mb-16 lg:mt-4 items-start lg:items-center">
               <div className="lg:col-span-5 w-full">
@@ -75,7 +75,7 @@ const Footer = ({ data = footerData }) => {
                   />
                   <button 
                     type="submit" 
-                    className="bg-white text-black px-6 md:px-10 py-[14px] text-xs font-bold tracking-widest hover:bg-gray-200 transition-colors whitespace-nowrap"
+                    className="bg-white text-black px-4 md:px-4 py-[14px] text-xs font-bold tracking-widest hover:bg-gray-200 transition-colors whitespace-nowrap"
                   >
                     {data.newsletter.buttonText}
                   </button>

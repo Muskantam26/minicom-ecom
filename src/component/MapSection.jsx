@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 const MapSection = ({ mapSrc, storeInfo }) => {
   const navigate = useNavigate();
   return (
-    <div className="w-full px-4 sm:px-6 lg:px-8 py-8 md:py-12 bg-white">
+    <div className="w-full px-4  bg-white">
       <div className="w-full flex flex-col md:block relative max-w-[1400px] mx-auto">
         <div className="w-full overflow-hidden rounded-2xl shadow-sm border-2 border-gray-100 h-[300px] md:h-[500px] lg:h-[600px]">
           <iframe

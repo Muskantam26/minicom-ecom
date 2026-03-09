@@ -66,18 +66,19 @@ const storeLocationsData = [
 
 const AboutUs = () => {
   return (
-    <div className="bg-white text-gray-800">
+    <div className="p-1 text-gray-800">
       <HeaderPage />
+      <div className=" w-full mx-auto px-4 lg:px-8 py-8">
 
-      <div className="p-5 flex flex-col md:flex-row gap-5 mt-10 rounded">
-        <div className="w-full md:w-[70%] overflow-hidden rounded-sm shadow">
+      <div className="flex flex-col md:flex-row gap-5  rounded">
+        <div className="w-full  overflow-hidden rounded-sm shadow">
           <img 
             src="https://nov-minicom.myshopify.com/cdn/shop/files/about-us-1.jpg?v=1749029624&width=1296" 
             alt="img here" 
             className="w-full h-full object-cover transition-transform duration-1500 hover:scale-110"
           />
         </div>
-        <div className="w-full md:w-[30%] overflow-hidden rounded-sm shadow">
+        <div className="w-full  overflow-hidden rounded-sm shadow">
           <img 
             src="https://nov-minicom.myshopify.com/cdn/shop/files/about-us-2.jpg?v=1751102053&width=768" 
             alt="img here"  
@@ -91,12 +92,12 @@ const AboutUs = () => {
 
 
 
-<div className="flex-col text-center mt-10 px-5">
+<div className="flex-col text-center mt-5">
   <p className="text-sm text-gray-700 font-semibold">Real Customer Experience</p>
   <h1 className="text-2xl md:text-3xl font-bold text-black mt-2">Videos From Our Clients</h1>
 </div>
 
-<div className="flex flex-col md:flex-row gap-5 mt-10 p-5">
+<div className="flex flex-col md:flex-row gap-5 mt-5">
   <div className="relative group w-full">
     <img src="https://nov-minicom.myshopify.com/cdn/shop/files/about-us-video-1.jpg?v=1749029624&width=1920" alt="img here" className="rounded shadow w-full h-full object-cover"/>
     <div className="absolute inset-0 flex justify-center items-center pointer-events-none">
@@ -124,21 +125,20 @@ const AboutUs = () => {
 </div>
 
 
-      <div className="flex-col text-center mt-10 w-full">
+      <div className="flex-col text-center mt-5 w-full">
         <p className="text-sm font-medium text-gray-500 tracking-widest mb-4">How We Work</p>
-        <h2 className="text-2xl md:text-3xl font-bold text-black mb-16">
-          We Give You The Power To Create Spaces That<br className="hidden md:block" />
-          Are Just Right For You
+        <h2 className="text-xl md:text-3xl font-bold text-black mb-5 text-align">
+          We Give You The Power To Create Spaces That Are Just Right For You
         </h2>
 
-        <div className="flex flex-col md:flex-row justify-center gap-10 ">
+        <div className="flex flex-col md:flex-row justify-center gap-5 ">
           {workSteps.map((step, index) => (
             <div key={index} className="flex flex-col items-center text-center flex-1">
-              <div className="mb-6 text-black text-bold">
+              <div className="mb-5 text-black text-bold">
                 {step.icon}
               </div>
               <h3 className="text-2xl font-semibold mb-3 text-black">{step.title}</h3>
-              <p className="text-sm text-gray-500 leading-relaxed max-w-[400px] mx-auto">
+              <p className="text-sm text-gray-500 leading-relaxed text-align mx-auto">
                 {step.description}
               </p>
             </div>
@@ -172,7 +172,7 @@ const AboutUs = () => {
         title="Stores System"
         locations={storeLocationsData}
       />
-
+      </div>
     </div>
   );
 };

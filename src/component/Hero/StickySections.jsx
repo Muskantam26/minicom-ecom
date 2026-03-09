@@ -36,7 +36,7 @@ const StickyCard = ({ item, index, totalCards }) => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-2xl md:text-5xl font-bold text-gray-900 uppercase mb-3 md:mb-6 tracking-wide leading-tight"
+          className="text-2xl md:text-4xl font-bold text-gray-900 uppercase mb-3 md:mb-6 tracking-wide leading-tight"
         >
           {item.title}
         </motion.h2>
@@ -44,7 +44,7 @@ const StickyCard = ({ item, index, totalCards }) => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="text-gray-600 text-sm md:text-xl mb-6 md:mb-10 leading-relaxed max-w-lg"
+          className="text-gray-600 text-sm md:text-xl  text-justify leading-relaxed"
         >
           {item.description}
         </motion.p>
@@ -53,13 +53,14 @@ const StickyCard = ({ item, index, totalCards }) => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
+            className="mt-5"
           >
             <Button1
               variant="primary"
               text={item.buttonText}
               icon={<ArrowUpRight size={16} />}
               iconPosition="right"
-              className="!h-auto !py-3 !px-5 md:!py-4 md:!px-8 !text-[10px] md:!text-sm"
+              className=""
             />
           </motion.div>
         )}

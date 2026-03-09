@@ -36,7 +36,7 @@ const PageStoreLocation = () => {
   return (
     <div>
       <HeaderPage/>
-      <div className="w-full flex flex-col pt-10 pb-20 gap-0 lg:gap-0 bg-white">
+      <div className=" w-full mx-auto  lg:px-8 flex flex-col gap-0 lg:gap-0 bg-white">
         {locationsData.map((location, index) => (
           <StoreLocationDetail key={index} {...location} />
         ))}

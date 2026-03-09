@@ -5,7 +5,7 @@ const ProductGrid = ({ data }) => {
   if (!data || data.length === 0) return null;
 
   return (
-    <div className="w-full p-4 md:p-5 mx-auto">
+    <div className="w-full  mx-auto">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
         {data.map((categoryGroup, index) => (
           <div key={index} className="flex flex-col">

@@ -2,11 +2,11 @@ import React from 'react';
 
 const TeamSection = ({ subtitle, title, teamMembers }) => {
   return (
-    <div className="flex-col text-center mt-10 w-full mb-10  ">
-      <p className="text-sm font-medium text-gray-500 tracking-widest mb-4 uppercase">{subtitle}</p>
+    <div className="flex-col text-center  w-full  ">
+      <p className="text-sm font-medium text-gray-500 tracking-widest mb-4 uppercase ">{subtitle}</p>
       <h2 className="text-3xl font-bold text-black mb-10">{title}</h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6  px-10 mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6  mx-auto">
         {teamMembers.map((member, index) => (
           <div key={index} className="relative group overflow-hidden rounded-xl shadow cursor-pointer h-[400px] ">
             <img 

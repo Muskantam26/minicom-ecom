@@ -6,7 +6,9 @@ const PageTestimonial = () => {
   return (
     <div>
       <HeaderPage title="PAGE TESTIMONIAL" />
+      <div className=" w-full mx-auto  px-4  mt-5">
       <Testimonials/>
+      </div>
     </div>
   );
 };

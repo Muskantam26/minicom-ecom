@@ -34,7 +34,7 @@ const Tags = ({
       <div className='mt-8 lg:mt-12'>
         <h1 className='text-lg lg:text-xl font-semibold'>{sectionTitle}</h1>
         {visibleParagraphs.map((para, index) => (
-          <p key={index} className='text-xs text-gray-700 tracking-wide mt-4 lg:mt-5 leading-relaxed'>
+          <p key={index} className='text-xs text-gray-700 tracking-wide mt-4 lg:mt-5 leading-relaxed text-justify'>
             {para}
           </p>
         ))}

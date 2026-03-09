@@ -34,7 +34,7 @@ const CustomerReviews = ({ data = [] }) => {
   };
 
   return (
-    <div className="w-full mx-auto px-4 py-10 md:py-16 font-sans relative">
+    <div className="w-full mx-auto   font-sans relative">
       <div className="text-center mb-8 md:mb-12">
         <p className="text-[10px] md:text-xs text-gray-400 font-semibold tracking-wider mb-1 md:mb-2 uppercase">
           5.00 FROM 1230+ REVIEWS
@@ -64,9 +64,9 @@ const CustomerReviews = ({ data = [] }) => {
                   <div
                     key={review.id}
                     className={`w-full md:w-1/2 flex flex-col justify-start transition-opacity duration-500 ${
-                      // Let's make the second item in the desktop view slightly faded, as in the user's image,
+                     
                       idx === 1 && itemsPerPage === 2
-                        ? "opacity-60 hover:opacity-100" // Faded style for the second one as seen in picture
+                        ? "opacity-60 hover:opacity-100"
                         : "opacity-100"
                     }`}
                   >
@@ -81,7 +81,7 @@ const CustomerReviews = ({ data = [] }) => {
                     <h3 className="text-base md:text-xl font-bold text-gray-900 mb-2 md:mb-4 leading-snug">
                       {review.title}
                     </h3>
-                    <p className="text-gray-600 mb-6 md:mb-8 leading-relaxed text-[13px] md:text-base">
+                    <p className="text-gray-600 mb-6 md:mb-8 leading-relaxed text-[13px] md:text-base flex text-justify">
                       {review.text}
                     </p>
 

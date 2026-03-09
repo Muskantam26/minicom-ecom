@@ -9,8 +9,10 @@ const ContactUS = () => {
   return (
     <div>
         <HeaderPage title="Contact Us" />
+        <div className=" w-full mx-auto ">
         <MapSection mapSrc={mapSrc} />
         <ContactFormSection />
+        </div>
     </div>
   )
 }

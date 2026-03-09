@@ -24,7 +24,7 @@ const CollectionProduct = () => {
     };
 
     return (
-        <div className="relative w-full group py-4">
+        <div className="relative w-full group ">
              {/* Left Arrow */}
              <button 
                 onClick={() => scroll('left')}

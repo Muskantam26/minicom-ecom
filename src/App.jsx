@@ -25,7 +25,7 @@ const App = () => {
   return (
     <div className="flex flex-col min-h-screen overflow-x-clip">
       <Header1 isAccountOpen={isAccountOpen} setIsAccountOpen={setIsAccountOpen} />
-      {/* <main className="flex-grow"> */}
+      <main className="flex-grow w-full">
         <Routes>
           <Route path="/" element={<Hero />} />
           <Route path="/collection" element={<Collection />} />
@@ -47,7 +47,7 @@ const App = () => {
           
        
         </Routes>
-      {/* </main> */}
+      </main>
       <Footer />
       <MobileBottomNav setIsAccountOpen={setIsAccountOpen} />
     </div>

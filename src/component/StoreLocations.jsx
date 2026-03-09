@@ -2,11 +2,11 @@ import React from 'react';
 
 const StoreLocations = ({ subtitle, title, locations }) => {
   return (
-    <div className="flex-col text-center mt-20 w-full mb-20 px-5">
+    <div className="flex-col text-center mt-5 w-full ">
       <p className="text-sm font-medium text-gray-500 mb-4">{subtitle}</p>
       <h2 className="text-3xl font-bold text-black mb-12">{title}</h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-[1400px] mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8  mx-auto">
         {locations.map((location, index) => (
           <div key={index} className="flex flex-col text-center">
             <div className="w-full overflow-hidden rounded-[4px] mb-6 shadow-sm">

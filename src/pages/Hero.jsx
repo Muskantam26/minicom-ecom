@@ -540,10 +540,12 @@ const faqData = {
 const Hero = () => {
   return (
     <>
+   
       <div className="relative w-full md:h-60 lg:h-[90vh] bg-brand-hover overflow-hidden group">
         {/* Background Slider */}
         <Slider slides={slides} slideDuration={3000} />
       </div>
+       <div className="p-4">
       <div className=" w-full mt-5 ">
         <Ticker data={tickerData} />
       </div>
@@ -554,7 +556,7 @@ const Hero = () => {
       <div className="mt-5">
         <HandpickedElegance data={handpickedEleganceData} />
       </div>
-      <div className="mt-5 p-5">
+      <div className="mt-5 ">
         <ShoppingGuide data={shoppingGuideData} />
       </div>
 
@@ -576,7 +578,7 @@ const Hero = () => {
 
     
 
-      <div className="mt-5 p-5">
+      <div className="mt-5">
         <StickySections data={stickySectionsData} />
       </div>
 
@@ -599,6 +601,7 @@ const Hero = () => {
       </div>
         <div className="mt-5">
         <Faq data={faqData} />
+      </div>
       </div>
     </>
   );

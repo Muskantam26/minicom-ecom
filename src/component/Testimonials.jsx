@@ -89,8 +89,8 @@ const testimonialData = [
 
 const TestimonialCard = ({ review }) => {
   return (
-    <div className="bg-white p-8 rounded-md shadow-[0_2px_15px_rgba(0,0,0,0.06)] border border-gray-200 flex flex-col mb-6 break-inside-avoid shadow-xl hover:-translate-y-1 transition-transform duration-300">
-      <p className="text-gray-500 text-[14px] leading-relaxed mb-6 whitespace-pre-line text-left">
+    <div className="bg-white p-8 rounded-md shadow-[0_2px_15px_rgba(0,0,0,0.06)] border border-gray-200 flex flex-col mb-6 break-inside-avoid shadow-xl hover:-translate-y-1 transition-transform duration-300 ">
+      <p className="text-gray-500 text-justify text-[14px] leading-relaxed mb-6 ">
         {review.text}
       </p>
       <div className="flex items-center gap-4 mt-auto">
@@ -115,7 +115,7 @@ const TestimonialCard = ({ review }) => {
 const Testimonials = () => {
   return (
     <div className="w-full ">
-      <div className=" p-10 ">
+      <div className="  ">
         
         {/* Top Graphic Section */}
         <div className="w-full bg-[#f4f4f4] rounded-lg p-15 flex flex-col md:flex-row   gap-8 mb-12">

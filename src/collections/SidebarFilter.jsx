@@ -80,7 +80,7 @@ const SidebarFilter = ({
   const handleResetColor = () => setSelectedColor(null);
 
   return (
-    <aside className="w-full lg:w-72 pr-0 lg:pr-6 border-r-0 lg:border-r border-gray-100 pb-10">
+    <aside className="w-full lg:w-72 pr-0  border-r-0 lg:border-r border-gray-100 pb-10">
       <div>
         <div className='flex items-center text-gray-900 mt-2 lg:mt-10 space-x-2 pb-6 border-b border-gray-200'>
           <Menu/> <h1 className='font-bold text-xl'>CATEGORIES</h1>

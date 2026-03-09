@@ -8,7 +8,7 @@ const ProductReviews = () => {
   return (
     <div className="flex flex-col md:flex-row gap-8 w-full">
       {/* Left Column */}
-      <div className="w-full md:w-[35%] lg:w-[30%] border border-gray-100 bg-white p-6 rounded-sm  shadow-xl flex flex-col">
+      <div className="w-full md:w-[35%] lg:w-[30%] border border-gray-100 bg-white p-6 rounded-sm  shadow-xs flex flex-col">
         <h2 className="text-[18px] font-bold text-gray-900 mb-4">Reviews</h2>
         <p className="text-[13px] text-gray-500 mb-6 font-medium">Be the first to write a review</p>
         
@@ -37,7 +37,7 @@ const ProductReviews = () => {
       </div>
 
       {/* Right Column */}
-      <div className="flex-1 border border-gray-100 bg-white flex items-center shadow-xl justify-center  rounded-sm shadow-[0_2px_15px_rgba(0,0,0,0.04)] ">
+      <div className="flex-1 border border-gray-100 bg-white flex items-center shadow-xs justify-center  rounded-sm p-4 ">
         <p className="text-[13px] text-gray-500 font-medium">
           No reviews yet, lead the way and share your thoughts
         </p>
