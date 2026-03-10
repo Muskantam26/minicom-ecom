@@ -155,9 +155,9 @@ const coreFeaturesData = {
          </div>
          
          <div className='flex-1 overflow-hidden lg:pl-5'>
-          <div className='w-full flex justify-between items-center pl-0 lg:pl-4 mb-6 lg:mb-0'>
+          <div className='w-full sticky  flex justify-between items-center pl-0 lg:pl-4 mb-6 lg:mb-0'>
             <SortDropdown />
-            <div className='flex gap-3 items-center text-gray-400 pr-0 lg:pr-5'>
+            <div className='flex gap-3 items-center text-gray-400 pr-5 lg:pr-5'>
                <button className="bg-black text-white p-2.5 rounded hover:bg-black/90 transition-colors">
                  <IoGrid size={20} className="cursor-pointer" />
                </button>
@@ -170,8 +170,8 @@ const coreFeaturesData = {
         title=''
         subtitle=''
         />
-
-        <div className="flex justify-center">
+        
+         <div className="flex justify-center">
           <button className='bg-yellow-400 py-3 px-8 lg:p-5 lg:px-15 xl:mr-80 rounded text-xs font-medium flex justify-left items-center hover:bg-[#d8a849] hover:text-white transition-colors duration-300'>Load More Items</button>
         </div>
         

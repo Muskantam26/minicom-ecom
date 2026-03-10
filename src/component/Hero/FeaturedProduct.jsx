@@ -127,7 +127,7 @@ const FeaturedProduct = ({
               <Button1
                 text="Add To Cart"
                 className="h-12 flex-grow bg-[#ffc107] text-black font-bold hover:bg-[#ffb300] rounded-none flex justify-center items-center text-sm transition-colors whitespace-nowrap"
-                variant="custom"
+                variant="primary"
               />
               <button className="h-12 w-12 border border-gray-200 bg-gray-50 flex items-center justify-center hover:bg-gray-100 transition-colors shrink-0">
                 <Star size={18} className="text-gray-600" />
@@ -138,7 +138,7 @@ const FeaturedProduct = ({
           {/* Buy it Now */}
           <Button1
             text="Buy It Now →"
-            className="w-full h-12 bg-brand-hover text-white hover:bg-gray-800 rounded-none !text-sm flex justify-center items-center mt-2 mb-8 uppercase font-bold transition-colors"
+            className="w-full h-12 bg-brand-hover text-white  rounded-none !text-sm flex justify-center items-center mt-2 mb-8 uppercase font-bold transition-colors"
             variant="custom"
           />
 

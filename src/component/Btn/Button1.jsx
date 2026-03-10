@@ -12,6 +12,7 @@ export const Button1 = ({
   iconPosition = "left", // 'left', 'right'
   isActive = false,
   ...props
+  
 }) => {
   let baseClass = "transition-colors shrink-0 outline-none ";
 
@@ -60,7 +61,7 @@ export const Button1 = ({
     <motion.button
       whileHover={variant === "primary" ? "hover" : undefined}
       initial="initial"
-      className={`${baseClass} ${className}`}
+      className={`${baseClass} ${className} cursor-pointer`}
       onClick={onClick}
       {...props}
     >
