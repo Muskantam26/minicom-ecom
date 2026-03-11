@@ -18,39 +18,14 @@ import Login from "./component/auth/Login";
 import Register from "./component/auth/Register";
 import Checkout from "./pages/Checkout";
 import MobileBottomNav from "./component/MobileBottomNav";
+import Approutes from "./Routes/Approutes";
 
 const App = () => {
-  const [isAccountOpen, setIsAccountOpen] = useState(false);
-
+ 
   return (
-    <div className="flex flex-col min-h-screen overflow-x-clip">
-      <Header1 isAccountOpen={isAccountOpen} setIsAccountOpen={setIsAccountOpen} />
-      <main className="flex-grow w-full">
-        <Routes>
-          <Route path="/" element={<Hero />} />
-          <Route path="/collection" element={<Collection />} />
-           <Route path="/products" element={<Products />} />
-          <Route path="/product/:id" element={<Products />} />
-          <Route path="/about-Us" element={<AboutUs/>}/>
-          <Route path="*" element={<Hero />} />
-          <Route path="/404" element={<Error/>}/>
-          <Route path="/contact" element={<ContactUS/>}/>
-          <Route path="/Frequently-Asked-Questions" element={<Faqs/>}/>
-          <Route path="/page-store-direction" element={<PageStoreDirection/>}/>
-          <Route path="/page-store-location" element={<PageStoreLocation/>}/>
-          <Route path="/page-testimonial" element={<PageTestimonial/>}/>
-          <Route path="/wishlist" element={<Wishlist/>}/>
-          <Route path="/cart" element={<ShopingCart/>}/>
-          <Route path="/login" element={<Login/>}/>
-          <Route path="/register" element={<Register/>}/>
-          <Route path="/checkout" element={<Checkout/>}/>
-          
-       
-        </Routes>
-      </main>
-      <Footer />
-      <MobileBottomNav setIsAccountOpen={setIsAccountOpen} />
-    </div>
+   <div>
+    <Approutes/>
+   </div>
   );
 };
 

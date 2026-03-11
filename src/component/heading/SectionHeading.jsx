@@ -20,7 +20,7 @@ const SectionHeading = ({
       )}
 
       {description && (
-        <p className="text-sm text-gray-600 text-justify  leading-relaxed   ">
+        <p className="text-sm text-gray-600 text-center  leading-relaxed   ">
           {description}
         </p>
       )}

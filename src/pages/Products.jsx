@@ -16,7 +16,7 @@ const productData = {
   sku: "a 123",
   categories: ["Dining Room", "Kitchen", "Lighting", "Living Room", "Office", "Outdoor", "Plant Pots"],
   colors: [
-    { name: "WHITE", class: "bg-white", border: "border-yellow-400" },
+    { name: "WHITE", class: "bg-background", border: "border-brand" },
     { name: "ORANGE", class: "bg-orange-400", border: "border-transparent" },
     { name: "TEAL", class: "bg-teal-600", border: "border-transparent" }
   ],
@@ -32,22 +32,22 @@ const productData = {
 const coreFeaturesData = {
   features: [
     {
-      icon: <Leaf className="w-6 h-6 text-black" strokeWidth={1.5} />,
+      icon: <Leaf className="w-6 h-6 text-title" strokeWidth={1.5} />,
       title: "Eco-Friendly Materials",
       description: "We craft our furniture using responsibly sourced, environmentally friendly materials.",
     },
     {
-      icon: <PencilRuler className="w-6 h-6 text-black" strokeWidth={1.5} />,
+      icon: <PencilRuler className="w-6 h-6 text-title" strokeWidth={1.5} />,
       title: "Effortless Assembly",
       description: "Thoughtfully designed for quick setup, requiring minimal effort and no extra tools.",
     },
     {
-      icon: <Recycle className="w-6 h-6 text-black" strokeWidth={1.5} />,
+      icon: <Recycle className="w-6 h-6 text-title" strokeWidth={1.5} />,
       title: "Giving Back to Nature",
       description: "Every purchase contributes to reforestation efforts, helping restore green spaces.",
     },
     {
-      icon: <Lightbulb className="w-6 h-6 text-black" strokeWidth={1.5} />,
+      icon: <Lightbulb className="w-6 h-6 text-title" strokeWidth={1.5} />,
       title: "Sustainable Production",
       description: "Dedicated to reducing waste and promoting eco-conscious manufacturing practices.",
     },
@@ -113,13 +113,13 @@ const Products = () => {
   return (
     <div className=" w-full mx-auto p-4">
       {/* Breadcrumb */}
-      <div className="text-xs text-gray-900 mb-6 font-medium mt-2 md:mt-5">
+      <div className="text-xs text-title mb-6 font-medium mt-2 md:mt-5">
         <span onClick={() => navigate("/")} className="hover:underline cursor-pointer">Home</span>
         <span className="mx-2">•</span>
-        <span className="text-gray-600">{product.name}</span>
+        <span className="text-subtitle">{product.name}</span>
       </div>
 
-      <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 text-gray-900">
+      <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 text-title">
         
         {/* Left Column: Images */}
         <div className="w-full lg:w-[55%] flex flex-col-reverse md:flex-row gap-4">
@@ -129,7 +129,7 @@ const Products = () => {
               <button 
                 key={idx} 
                 onClick={() => setSelectedImage(idx)}
-                className={`w-20 h-24 md:w-full md:h-auto md:aspect-[4/5] shrink-0 bg-gray-50 flex items-center justify-center p-2 rounded border ${selectedImage === idx ? 'border-yellow-400' : 'border-transparent hover:border-gray-200'} transition-colors`}
+                className={`w-20 h-24 md:w-full md:h-auto md:aspect-[4/5] shrink-0 bg-secondary flex items-center justify-center p-2 rounded border ${selectedImage === idx ? 'border-brand' : 'border-transparent hover:border-outline'} transition-colors`}
               >
                 <img src={img} alt={`Thumbnail ${idx}`} className="w-full h-full object-contain mix-blend-multiply" />
               </button>
@@ -140,7 +140,7 @@ const Products = () => {
           <div className="flex-1  relative flex items-center justify-  rounded ">
             <button 
               onClick={handlePrevImage}
-              className="absolute  w-8 h-8 sm:w-10 sm:h-10 bg-white rounded-full flex items-center justify-center shadow hover:bg-gray-100 transition disabled:opacity-50 z-10"
+              className="absolute  w-8 h-8 sm:w-10 sm:h-10 bg-background rounded-full flex items-center justify-center shadow hover:bg-secondary transition disabled:opacity-50 z-10"
             >
               <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
@@ -151,7 +151,7 @@ const Products = () => {
             />
             <button 
               onClick={handleNextImage}
-              className="absolute right-0 sm:right-2 w-8 h-8 sm:w-10 sm:h-10 bg-white rounded-full flex items-center justify-center shadow hover:bg-gray-100 transition disabled:opacity-50 z-10"
+              className="absolute right-0 sm:right-2 w-8 h-8 sm:w-10 sm:h-10 bg-background rounded-full flex items-center justify-center shadow hover:bg-secondary transition disabled:opacity-50 z-10"
             >
               <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
@@ -160,42 +160,42 @@ const Products = () => {
 
         {/* Right Column: Details */}
         <div className="w-full lg:w-[45%] flex flex-col">
-          <h1 className="text-sm md:text-[28px] font-bold text-gray-900 mb-3 leading-tight">{product.name}</h1>
+          <h1 className="text-title mb-3 leading-tight">{product.name}</h1>
           
           {/* Reviews */}
           <div className="flex items-center gap-3 mb-5">
-            <div className="flex text-gray-300">
+            <div className="flex text-outline">
               {[1,2,3,4,5].map(i => <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 fill-current" />)}
             </div>
-            <span className="text-sm font-medium text-gray-500">(0)</span>
-            <button className="text-[11px] font-bold tracking-wider hover:text-yellow-500 transition-colors">VIEW ALL REVIEWS</button>
+            <span className="text-sm font-medium text-body">(0)</span>
+            <button className="text-[11px] font-bold tracking-wider hover:text-brand transition-colors">VIEW ALL REVIEWS</button>
           </div>
 
-          <div className="text-[24px] sm:text-[28px] font-bold text-gray-900 mb-6">{product.price}</div>
+          <div className="text-[24px] sm:text-[28px] font-bold text-title mb-6">{product.price}</div>
 
-          <div className="text-[14px] sm:text-[13px] text-gray-500 leading-[1.8] mb-8">
+          <div className="text-[14px] sm:text-[13px] text-body leading-[1.8] mb-8">
             {product.description}
           </div>
 
           <div className="flex items-center gap-4 mb-3 text-[13px]">
             <span className="font-bold w-[90px] shrink-0">AVAILABLE:</span>
             {product.available ? (
-              <span className="text-green-500 flex items-center gap-1 font-medium">IN STOCK <Check className="w-3.5 h-3.5" /></span>
+              <span className="text-success flex items-center gap-1 font-medium">IN STOCK <Check className="w-3.5 h-3.5" /></span>
             ) : (
-              <span className="text-red-500 font-medium">OUT OF STOCK</span>
+              <span className="text-danger font-medium">OUT OF STOCK</span>
             )}
           </div>
           <div className="flex items-center gap-4 mb-3 text-[13px]">
             <span className="font-bold w-[90px] shrink-0">TAGS:</span>
-            <span className="text-gray-600 truncate">{product.tags.join(', ')}</span>
+            <span className="text-subtitle truncate">{product.tags.join(', ')}</span>
           </div>
           <div className="flex items-center gap-4 mb-3 text-[13px]">
             <span className="font-bold w-[90px] shrink-0">SKU:</span>
-            <span className="text-gray-600">{product.sku}</span>
+            <span className="text-subtitle">{product.sku}</span>
           </div>
           <div className="flex items-start gap-4 mb-8 text-[13px]">
             <span className="font-bold w-[90px] shrink-0 mt-0.5">CATEGORY:</span>
-            <span className="text-gray-600 leading-relaxed">{product.categories.join(', ')}</span>
+            <span className="text-subtitle leading-relaxed">{product.categories.join(', ')}</span>
           </div>
 
           {/* Color Selection */}
@@ -206,7 +206,7 @@ const Products = () => {
                 <button
                   key={color.name}
                   onClick={() => setSelectedColor(color)}
-                  className={`w-9 h-9 rounded-full relative ${color.class} ${selectedColor.name === color.name ? 'ring-1 ring-offset-2 ring-gray-900' : ''} border ${color.border}`}
+                  className={`w-9 h-9 rounded-full relative ${color.class} ${selectedColor.name === color.name ? 'ring-1 ring-offset-2 ring-title' : ''} border ${color.border}`}
                   aria-label={`Select ${color.name} color`}
                 />
               ))}
@@ -221,7 +221,7 @@ const Products = () => {
                 <button
                   key={size}
                   onClick={() => setSelectedSize(size)}
-                  className={`px-4 sm:px-6 py-2 border text-[11px] font-bold tracking-wider rounded-sm ${selectedSize === size ? 'bg-brand-hover text-white border-black bg-gray-900' : 'bg-white text-gray-900 border-gray-200 hover:border-gray-400'} transition-all`}
+                  className={`px-4 sm:px-6 py-2 border text-[11px] font-bold tracking-wider rounded-sm ${selectedSize === size ? 'bg-brand-hover text-background border-title bg-title' : 'bg-background text-title border-outline hover:border-outline'} transition-all`}
                 >
                   {size}
                 </button>
@@ -231,41 +231,41 @@ const Products = () => {
 
           {/* Quantity & Actions */}
           <div className="flex flex-wrap sm:flex-nowrap gap-3 sm:gap-4 mb-4">
-            <div className="flex border border-gray-200 items-center w-[110px] sm:w-[120px] h-12 rounded-sm bg-white shrink-0">
-              <button onClick={handleDecreaseQuantity} className="w-10 h-full flex items-center justify-center text-gray-500 hover:text-black transition-colors">-</button>
+            <div className="flex border border-outline items-center w-[110px] sm:w-[120px] h-12 rounded-sm bg-background shrink-0">
+              <button onClick={handleDecreaseQuantity} className="w-10 h-full flex items-center justify-center text-body hover:text-title transition-colors">-</button>
               <span className="flex-1 text-center font-medium text-sm">{quantity}</span>
-              <button onClick={handleIncreaseQuantity} className="w-10 h-full flex items-center justify-center text-gray-500 hover:text-black transition-colors">+</button>
+              <button onClick={handleIncreaseQuantity} className="w-10 h-full flex items-center justify-center text-body hover:text-title transition-colors">+</button>
             </div>
             
-            <button className="flex-1 min-w-[150px] h-12 bg-gray-100 hover:bg-yellow-400 text-black font-bold text-xs tracking-wider rounded-sm transition-colors uppercase">
+            <button className="flex-1 min-w-[150px] h-12 bg-secondary hover:bg-brand-hover text-title font-bold text-xs tracking-wider rounded-sm transition-colors uppercase">
               Add To Bag
             </button>
             
-            <button className="w-12 h-12 shrink-0 flex items-center justify-center bg-gray-100 hover:bg-gray-200 rounded-sm transition-colors text-gray-600">
+            <button className="w-12 h-12 shrink-0 flex items-center justify-center bg-secondary hover:bg-outline rounded-sm transition-colors text-subtitle">
               <Heart className="w-5 h-5 fill-current" />
             </button>
           </div>
 
-          <button className="w-full h-12 border border-gray-200 hover:border-black font-bold text-xs tracking-wider rounded-sm transition-colors mb-8 uppercase bg-white">
+          <button className="w-full h-12 border border-outline hover:border-title font-bold text-xs tracking-wider rounded-sm transition-colors mb-8 uppercase bg-background">
             Buy It Now
           </button>
 
           {/* Additional Links */}
-          <div className="flex flex-wrap gap-6 sm:gap-8 border-b border-gray-100 pb-8 mb-8">
-            <button className="flex items-center gap-2 text-[12px] sm:text-[13px] font-bold hover:text-yellow-500 transition-colors">
+          <div className="flex flex-wrap gap-6 sm:gap-8 border-b border-outline pb-8 mb-8">
+            <button className="flex items-center gap-2 text-[12px] sm:text-[13px] font-bold hover:text-brand transition-colors">
               <Share2 className="w-4 h-4" /> SHARE
             </button>
-            <button className="flex items-center gap-2 text-[12px] sm:text-[13px] font-bold hover:text-yellow-500 transition-colors">
+            <button className="flex items-center gap-2 text-[12px] sm:text-[13px] font-bold hover:text-brand transition-colors">
               <HelpCircle className="w-4 h-4" /> ASK A QUESTION
             </button>
-            <button className="flex items-center gap-2 text-[12px] sm:text-[13px] font-bold hover:text-yellow-500 transition-colors">
+            <button className="flex items-center gap-2 text-[12px] sm:text-[13px] font-bold hover:text-brand transition-colors">
               <MessageCircle className="w-4 h-4" /> FAQ
             </button>
           </div>
 
           {/* Benefits Box */}
-          <div className="border border-gray-200 rounded-xl   mb-8 text-center">
-            <h3 className="text-[13px] font-bold mb-6">THE BENEFITS OF CHOOSING US</h3>
+          <div className="border border-outline rounded-xl   mb-8 text-center">
+            <h3 className="mb-6 text-title">THE BENEFITS OF CHOOSING US</h3>
             <div className="grid grid-cols-4 md:grid-cols-4 gap-6 p-4 sm:gap-4">
               <div className="flex flex-col items-center gap-3">
                 <Leaf className="w-7 h-7" strokeWidth={1.5} />
@@ -287,13 +287,13 @@ const Products = () => {
           </div>
 
           {/* Shipping Info */}
-          <div className="flex flex-col gap-4 text-[13px] text-gray-500">
+          <div className="flex flex-col gap-4 text-[13px] text-body">
             <div className="flex items-center gap-3">
-              <Package className="w-5 h-5 text-gray-400 shrink-0" />
+              <Package className="w-5 h-5 text-subtitle shrink-0" />
               <span>Orders ship within 5 to 10 business days.</span>
             </div>
             <div className="flex items-center gap-3">
-              <Truck className="w-5 h-5 text-gray-400 shrink-0" />
+              <Truck className="w-5 h-5 text-subtitle shrink-0" />
               <span>Hoorey! This item ships free to the US</span>
             </div>
           </div>
@@ -302,7 +302,7 @@ const Products = () => {
       </div>
 
       {/* Product Tabs Section */}
-      <div className="mt-10 w-full  border-t md:border-t-0 border-gray-100 ">
+      <div className="mt-10 w-full  border-t md:border-t-0 border-outline ">
         {/* Tab Headers */}
         <div className="flex  gap-4 sm:gap-8 md:gap-16 mb-8 overflow-x-auto scrollbar-hide">
           {['Description', 'Delivery policy', 'Shipping & Return', 'Custom Tab'].map((tab) => (
@@ -310,7 +310,7 @@ const Products = () => {
               key={tab}
               onClick={() => setActiveTab(tab)}
               className={`text-[16px] md:text-[19px] whitespace-nowrap font-bold transition-colors ${
-                activeTab === tab ? 'text-[#FFC100]' : 'text-zinc-800 hover:text-gray-500'
+                activeTab === tab ? 'text-brand' : 'text-title hover:text-body'
               }`}
             >
               {tab}
@@ -319,7 +319,7 @@ const Products = () => {
         </div>
 
         {/* Tab Content */}
-        <div className="text-[14px] text-gray-500 leading-[1.8] w-full">
+        <div className="text-[14px] text-body leading-[1.8] w-full">
           {activeTab === 'Description' && (
             <div className="space-y-5 text-justify">
               <p>
@@ -328,7 +328,7 @@ const Products = () => {
               <p>
                 Praesent nec diam eleifend, vestibulum justo aliquet, aliquam ipsum. Curabitur egestas, augue a pellentesque ornare, tellus velit pulvinar nisl, sit amet placerat enim sem vel elit. Duis a mi metus. Suspendisse vulputate velit tempus efficitur lacus sit amet nunc ultricies ac gravida ante tempor
               </p>
-              <h4 className="font-bold text-[16px] text-gray-700 mt-6 mb-2">Lorem Ipsum</h4>
+              <h4 className="text-body mt-6 mb-2">Lorem Ipsum</h4>
               <ul className="list-disc pl-5 space-y-1.5 ml-2">
                 <li>Condimentum sit amet felis</li>
                 <li>Vestibulum justo aliquet</li>
@@ -369,10 +369,10 @@ const Products = () => {
       </div>
 
       {/* Related Products */}
-      <h2 className="text-xl md:text-2xl font-bold text-center mt-5">PRODUCT RELATED</h2>
+      <h2 className="text-center mt-5 text-title">PRODUCT RELATED</h2>
       <HandpickedElegance data={handpickedEleganceData} title="" subtitle="" />
             
-      <h2 className="text-xl md:text-2xl font-bold text-center mt-16 mb-6 md:mb-8">RECENTLY VIEWED PRODUCTS</h2>
+      <h2 className="text-center mt-16 mb-6 md:mb-8 text-title">RECENTLY VIEWED PRODUCTS</h2>
       <HandpickedElegance data={handpickedEleganceData} title="" subtitle="" />
     </div>
   );

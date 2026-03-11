@@ -108,7 +108,7 @@ const SidebarFilter = ({
           />
         </div>
       </div>
-
+c
       <div className='mt-8 pt-6 border-t border-gray-200'>
         <div className='flex justify-between items-center'>
             <h1 className='flex items-center text-gray-900 text-sm font-bold gap-2 uppercase'><FaAngleUp/>PRICE</h1>

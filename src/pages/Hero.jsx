@@ -440,22 +440,22 @@ const coreFeaturesData = {
   title: "BEYOND FURNITURE\nCREATING A GREENER TOMORROW",
   features: [
     {
-      icon: <Leaf className="w-6 h-6 text-black" strokeWidth={1.5} />,
+      icon: <Leaf className="w-6 h-6 text-title" strokeWidth={1.5} />,
       title: "Eco-Friendly Materials",
       description: "We craft our furniture using responsibly sourced, environmentally friendly materials.",
     },
     {
-      icon: <PencilRuler className="w-6 h-6 text-black" strokeWidth={1.5} />,
+      icon: <PencilRuler className="w-6 h-6 text-title" strokeWidth={1.5} />,
       title: "Effortless Assembly",
       description: "Thoughtfully designed for quick setup, requiring minimal effort and no extra tools.",
     },
     {
-      icon: <Recycle className="w-6 h-6 text-black" strokeWidth={1.5} />,
+      icon: <Recycle className="w-6 h-6 text-title" strokeWidth={1.5} />,
       title: "Giving Back to Nature",
       description: "Every purchase contributes to reforestation efforts, helping restore green spaces.",
     },
     {
-      icon: <Lightbulb className="w-6 h-6 text-black" strokeWidth={1.5} />,
+      icon: <Lightbulb className="w-6 h-6 text-title" strokeWidth={1.5} />,
       title: "Sustainable Production",
       description: "Dedicated to reducing waste and promoting eco-conscious manufacturing practices.",
     },
@@ -509,9 +509,9 @@ const faqData = {
   title: "FREQUENTLY ASKED QUESTIONS",
   description: "Explore our Frequently Asked Questions to find helpful answers and solutions to common inquiries. We've gathered the information you need to assist you quickly and efficiently.",
   buttons: [
-    { id: 1, text: "VIEW ALL FAQS", icon: <MessageSquare className="w-5 h-5 text-white" strokeWidth={1.5} />, link: "#" },
-    { id: 2, text: "CONTACT US", icon: <Phone className="w-5 h-5 text-white" strokeWidth={1.5} />, link: "#" },
-    { id: 3, text: "STORE LOCATIONS", icon: <Store className="w-5 h-5 text-white" strokeWidth={1.5} />, link: "#" }
+    { id: 1, text: "VIEW ALL FAQS", icon: <MessageSquare className="w-5 h-5 text-background" strokeWidth={1.5} />, link: "#" },
+    { id: 2, text: "CONTACT US", icon: <Phone className="w-5 h-5 text-background" strokeWidth={1.5} />, link: "#" },
+    { id: 3, text: "STORE LOCATIONS", icon: <Store className="w-5 h-5 text-background" strokeWidth={1.5} />, link: "#" }
   ],
   questions: [
     {

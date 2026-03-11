@@ -90,22 +90,22 @@ const coreFeaturesData = {
  
   features: [
     {
-      icon: <Leaf className="w-6 h-6 text-black" strokeWidth={1.5} />,
+      icon: <Leaf className="w-6 h-6 text-title" strokeWidth={1.5} />,
       title: "Eco-Friendly Materials",
       description: "We craft our furniture using responsibly sourced, environmentally friendly materials.",
     },
     {
-      icon: <PencilRuler className="w-6 h-6 text-black" strokeWidth={1.5} />,
+      icon: <PencilRuler className="w-6 h-6 text-title" strokeWidth={1.5} />,
       title: "Effortless Assembly",
       description: "Thoughtfully designed for quick setup, requiring minimal effort and no extra tools.",
     },
     {
-      icon: <Recycle className="w-6 h-6 text-black" strokeWidth={1.5} />,
+      icon: <Recycle className="w-6 h-6 text-title" strokeWidth={1.5} />,
       title: "Giving Back to Nature",
       description: "Every purchase contributes to reforestation efforts, helping restore green spaces.",
     },
     {
-      icon: <Lightbulb className="w-6 h-6 text-black" strokeWidth={1.5} />,
+      icon: <Lightbulb className="w-6 h-6 text-title" strokeWidth={1.5} />,
       title: "Sustainable Production",
       description: "Dedicated to reducing waste and promoting eco-conscious manufacturing practices.",
     },
@@ -127,20 +127,20 @@ const coreFeaturesData = {
          
          {/* Mobile Filter Button */}
          <div className='lg:hidden  flex justify-start p-4'>
-           <button onClick={() => setIsFilterOpen(true)} className='flex items-center gap-2 font-bold text-lg cursor-pointer hover:text-gray-600 transition-colors'>
+           <button onClick={() => setIsFilterOpen(true)} className='flex items-center gap-2 font-bold text-lg cursor-pointer hover:text-subtitle transition-colors'>
              <SlidersHorizontal className='w-6 h-6' /> FILTER <ChevronDown className='w-5 h-5' />
            </button>
          </div>
 
          {/* Mobile Sidebar Overlay */}
          <div 
-           className={`fixed inset-0 z-[60] bg-black/50 transition-opacity lg:hidden ${isFilterOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`} 
+           className={`fixed inset-0 z-[60] bg-title/50 transition-opacity lg:hidden ${isFilterOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`} 
            onClick={() => setIsFilterOpen(false)} 
          />
 
          {/* Mobile Sidebar Drawer */}
-         <div className={`fixed inset-y-0 left-0 z-[70] w-80 max-w-[85vw] bg-white overflow-y-auto transform transition-transform duration-300 ease-in-out lg:hidden ${isFilterOpen ? 'translate-x-0' : '-translate-x-full'} shadow-xl`}>
-           <div className="flex justify-between items-center  sticky top-0 bg-white z-10">
+         <div className={`fixed inset-y-0 left-0 z-[70] w-80 max-w-[85vw] bg-background overflow-y-auto transform transition-transform duration-300 ease-in-out lg:hidden ${isFilterOpen ? 'translate-x-0' : '-translate-x-full'} shadow-xl`}>
+           <div className="flex justify-between items-center  sticky top-0 bg-background z-10">
             
             
            </div>
@@ -157,11 +157,11 @@ const coreFeaturesData = {
          <div className='flex-1 overflow-hidden lg:pl-5'>
           <div className='w-full sticky  flex justify-between items-center pl-0 lg:pl-4 mb-6 lg:mb-0'>
             <SortDropdown />
-            <div className='flex gap-3 items-center text-gray-400 pr-5 lg:pr-5'>
-               <button className="bg-black text-white p-2.5 rounded hover:bg-black/90 transition-colors">
+            <div className='flex gap-3 items-center text-subtitle pr-5 lg:pr-5'>
+               <button className="bg-black text-background p-2.5 rounded hover:bg-title/90 transition-colors">
                  <IoGrid size={20} className="cursor-pointer" />
                </button>
-               {/* <button className="bg-gray-100 text-gray-500 p-2.5 rounded hover:bg-gray-200 transition-colors">
+               {/* <button className="bg-secondary text-body p-2.5 rounded hover:bg-outline transition-colors">
                  <CiBoxList size={22} className="cursor-pointer" />
                </button> */}
             </div>
@@ -172,10 +172,14 @@ const coreFeaturesData = {
         />
         
          <div className="flex justify-center">
-          <button className='bg-yellow-400 py-3 px-8 lg:p-5 lg:px-15 xl:mr-80 rounded text-xs font-medium flex justify-left items-center hover:bg-[#d8a849] hover:text-white transition-colors duration-300'>Load More Items</button>
-        </div>
-        
-        </div>
+          
+                    <Button1 
+                      variant="primary" 
+                      text="Load more items" 
+                      className=" justify-center"
+                    />
+               </div>
+         </div>
        </div>
 
 <div className='mt-5'><Tags/></div>
@@ -187,7 +191,7 @@ const coreFeaturesData = {
  
        </div>
          <div className=''>
-          <h1 className='text-2xl item-center justify-center font-bold text-center'>RECENTLY VIEWED PRODUCTS</h1>
+          <h1 className='item-center justify-center text-center text-title'>RECENTLY VIEWED PRODUCTS</h1>
         <HandpickedElegance data={handpickedEleganceData} 
         title=''
         subtitle=''

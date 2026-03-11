@@ -1,5 +1,5 @@
 @import "tailwindcss";
-
+/* 
 @theme {
   --color-brand: var(--color-button);
   --color-brand-text: var(--color-button-text);
@@ -25,6 +25,37 @@
 
   --font-primary: var(--font-family-primary);
   --font-default: var(--font-family-default);
+
+  --color-background: var(--color-background);
+  --color-success: var(--color-success);
+  --color-danger: var(--color-danger);
+  --color-warning: var(--color-warning);
+} */
+
+@layer base {
+  body {
+    font-family: var(--font-family-default);
+    font-size: var(--body-font-size);
+    font-weight: var(--body-font-weight);
+    font-style: var(--body-font-style);
+    line-height: var(--body-font-line-height);
+    color: var(--color-text);
+  }
+
+  h1, h2, h3, h4, h5, h6,
+  .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: var(--section-heading-font-family);
+    font-weight: var(--heading-font-weight);
+    font-style: var(--heading-font-style);
+    line-height: var(--heading-line-height);
+  }
+
+  h1, .h1 { font-size: var(--heading-font-size-h1); }
+  h2, .h2 { font-size: var(--heading-font-size-h2); }
+  h3, .h3 { font-size: var(--heading-font-size-h3); }
+  h4, .h4 { font-size: var(--heading-font-size-h4); }
+  h5, .h5 { font-size: var(--heading-font-size-h5); }
+  h6, .h6 { font-size: var(--heading-font-size-h6); }
 }
 
 .template-index {
@@ -39,6 +70,9 @@
 
   --color-background: #ffffff;
   --color-background-rgb: 255, 255, 255;
+  --color-success: #3b9f67;
+  --color-danger: #e85b40;
+  --color-warning: #ffc107;
 
 
   --color-title: #181818;
@@ -87,6 +121,9 @@
 
   --color-background: #000000;
   --color-background-rgb: 0, 0, 0;
+  --color-success: #3b9f67;
+  --color-danger: #e85b40;
+  --color-warning: #ffc107;
 
 
   --color-title: #ffffff;
@@ -135,6 +172,9 @@
 
   --color-background: #f5f5f5;
   --color-background-rgb: 245, 245, 245;
+  --color-success: #3b9f67;
+  --color-danger: #e85b40;
+  --color-warning: #ffc107;
 
 
   --color-title: #181818;
@@ -183,6 +223,9 @@
 
   --color-background: rgba(0, 0, 0, 0);
   --color-background-rgb: 0, 0, 0;
+  --color-success: #3b9f67;
+  --color-danger: #e85b40;
+  --color-warning: #ffc107;
 
 
   --color-title: #ffffff;
@@ -231,6 +274,9 @@
 
   --color-background: #f5f5f5;
   --color-background-rgb: 245, 245, 245;
+  --color-success: #3b9f67;
+  --color-danger: #e85b40;
+  --color-warning: #ffc107;
 
 
   --color-title: #181818;
@@ -279,6 +325,9 @@
 
   --color-background: #0f2e26;
   --color-background-rgb: 15, 46, 38;
+  --color-success: #3b9f67;
+  --color-danger: #e85b40;
+  --color-warning: #ffc107;
 
 
   --color-title: #ffffff;
@@ -330,7 +379,7 @@
   --container-fluid: 30px;
 
   --heading-font-size-h1: 3.0rem;
-  --heading-font-size-h2: 2.4rem;
+  --heading-font-size-h2: 1.4rem;
   --heading-font-size-h3: 1.8rem;
   --heading-font-size-h4: 1.6rem;
   --heading-font-size-h5: 1.2rem;
